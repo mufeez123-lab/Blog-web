@@ -39,7 +39,7 @@ export default function AboutPage() {
           </p>
           <ul>
             <li>
-              <strong>US Technology, AI &amp; Business Journalism:</strong>{" "}
+              <strong>Technology, AI &amp; Business Journalism:</strong>{" "}
               Contextual reporting on enterprise infrastructure, cybersecurity
               developments, applied artificial intelligence, and technology
               business explainers.

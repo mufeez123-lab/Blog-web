@@ -9,10 +9,11 @@ import {
   PlusCircle,
   ShieldCheck,
   Activity,
+  Sparkles,
 } from "lucide-react";
 import AdminNav from "@/components/AdminNav";
 import { getCurrentUser } from "@/lib/auth";
-import { getAdminArticles, getRecentAuditLogs } from "@/lib/articles";
+import { getAdminArticles, getAllCategories, getRecentAuditLogs } from "@/lib/articles";
 import { formatUSDate } from "@/components/ArticleCard";
 
 export const dynamic = "force-dynamic";
@@ -23,9 +24,10 @@ export default async function AdminDashboardPage() {
     redirect("/admin/login");
   }
 
-  const [allArticles, auditLogs] = await Promise.all([
+  const [allArticles, auditLogs, categories] = await Promise.all([
     getAdminArticles({ page: 1, pageSize: 50 }),
     getRecentAuditLogs(12),
+    getAllCategories(),
   ]);
 
   const items = allArticles.items;
@@ -44,17 +46,54 @@ export default async function AdminDashboardPage() {
               Editorial Dashboard
             </h1>
             <p className="text-sm text-slate-600 mt-1">
-              Manage US technology reporting, review queues, SEO metadata, and
-              site governance.
+              Manage US technology reporting, Google AI Studio daily generation,
+              review queues, SEO metadata, and site governance.
             </p>
           </div>
 
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/admin/ai-studio"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold rounded-md transition-colors"
+            >
+              <Sparkles className="w-4 h-4 text-blue-400" />
+              <span>AI Studio (3 Daily / Category)</span>
+            </Link>
+
+            <Link
+              href="/admin/articles/new"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold rounded-md transition-colors"
+            >
+              <PlusCircle className="w-4 h-4" />
+              <span>Create New Article</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Google AI Studio Daily Automation Banner */}
+        <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white p-6 rounded-lg border border-blue-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-300">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Google AI Studio Automated Pipeline</span>
+            </div>
+            <h2 className="font-serif text-xl font-bold">
+              Generate 3 Latest Articles &amp; Cover Images Daily per Category (
+              {categories.length} Active Categories)
+            </h2>
+            <p className="text-xs text-slate-300 max-w-2xl">
+              Automatically creates 3 latest articles with uploaded 16:9 cover
+              images and all 16 required attributes (headline, slug, excerpt,
+              HTML body, type, SEO metadata, citations, and tags) for{" "}
+              {categories.map((c) => c.name).join(", ")}.
+            </p>
+          </div>
           <Link
-            href="/admin/articles/new"
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold rounded-md transition-colors"
+            href="/admin/ai-studio"
+            className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase tracking-wider rounded-md shrink-0 inline-flex items-center gap-2 transition-colors"
           >
-            <PlusCircle className="w-4 h-4" />
-            <span>Create New Article</span>
+            <Sparkles className="w-4 h-4" />
+            <span>Open AI Studio Generator &rarr;</span>
           </Link>
         </div>
 

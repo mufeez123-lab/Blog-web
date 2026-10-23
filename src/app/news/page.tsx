@@ -8,9 +8,9 @@ import { getPublishedArticles, getWebsiteSettings } from "@/lib/articles";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Latest US Technology, AI & Business News",
+  title: "Latest Technology, AI & Business News",
   description:
-    "Read the latest US technology reporting, artificial intelligence developments, cybersecurity briefings, and business explainers on TechLedger.",
+    "Read the latest technology reporting, artificial intelligence developments, cybersecurity briefings, and business explainers on TechLedger.",
 };
 
 export default async function NewsIndexPage({

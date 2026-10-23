@@ -21,6 +21,19 @@ export interface IWebsiteSettings extends Document {
   contactEmail: string;
   footerText: string;
   operatingDisclosure: string;
+  googleAiStudioApiKey?: string;
+  dailyAiGenerationEnabled?: boolean;
+  dailyArticlesPerCategory?: number;
+  lastDailyAiRunAt?: Date | null;
+  googleFormUrl?: string;
+  googleFormActionUrl?: string;
+  googleFormEmailEntryId?: string;
+  googleFormCategoriesEntryId?: string;
+  smtpHost?: string;
+  smtpPort?: number;
+  smtpUser?: string;
+  smtpPass?: string;
+  smtpFrom?: string;
   updatedBy?: mongoose.Types.ObjectId;
   createdAt: Date;
   updatedAt: Date;
@@ -108,6 +121,69 @@ const WebsiteSettingsSchema = new Schema<IWebsiteSettings>(
       trim: true,
       default:
         "Published for readers in the United States and worldwide by an independent editorial and engineering team operating from India.",
+    },
+    googleAiStudioApiKey: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+    dailyAiGenerationEnabled: {
+      type: Boolean,
+      default: true,
+    },
+    dailyArticlesPerCategory: {
+      type: Number,
+      default: 3,
+      min: 1,
+      max: 10,
+    },
+    lastDailyAiRunAt: {
+      type: Date,
+      default: null,
+    },
+    googleFormUrl: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+    googleFormActionUrl: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+    googleFormEmailEntryId: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+    googleFormCategoriesEntryId: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+    smtpHost: {
+      type: String,
+      trim: true,
+      default: "smtp.gmail.com",
+    },
+    smtpPort: {
+      type: Number,
+      default: 587,
+    },
+    smtpUser: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+    smtpPass: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+    smtpFrom: {
+      type: String,
+      trim: true,
+      default: "",
     },
     updatedBy: {
       type: Schema.Types.ObjectId,

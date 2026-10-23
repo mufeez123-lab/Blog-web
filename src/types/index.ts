@@ -88,6 +88,26 @@ export interface WebsiteSettingsDTO {
   contactEmail: string;
   footerText: string;
   operatingDisclosure: string;
+  googleAiStudioApiKey?: string;
+  dailyAiGenerationEnabled?: boolean;
+  dailyArticlesPerCategory?: number;
+  lastDailyAiRunAt?: string | null;
+}
+
+export interface CategoryAttributeBlueprint {
+  categoryId: string;
+  categoryName: string;
+  categorySlug: string;
+  categoryDescription: string;
+  defaultArticleType: ArticleType;
+  editorialFocus: string;
+  contentStructure: string;
+  recommendedTags: string[];
+  requiredAttributes: {
+    attribute: string;
+    constraint: string;
+    description: string;
+  }[];
 }
 
 export interface SessionUser {

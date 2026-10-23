@@ -11,15 +11,18 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "create-admin": "tsx scripts/create-admin.ts",
-    "seed-demo": "tsx scripts/seed-demo.ts"
+    "seed-demo": "tsx scripts/seed-demo.ts",
+    "generate-daily": "tsx scripts/generate-daily-articles.ts"
   },
   "dependencies": {
+    "@types/nodemailer": "^8.0.2",
     "bcryptjs": "^2.4.3",
     "clsx": "^2.1.1",
     "jose": "^5.9.6",
     "lucide-react": "^0.469.0",
     "mongoose": "^8.9.5",
     "next": "15.1.6",
+    "nodemailer": "^10.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sanitize-html": "^2.14.0",

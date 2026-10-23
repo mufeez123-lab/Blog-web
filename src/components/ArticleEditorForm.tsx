@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Save,
@@ -10,6 +11,9 @@ import {
   Upload,
   AlertCircle,
   CheckCircle2,
+  Sparkles,
+  RefreshCw,
+  Layers,
 } from "lucide-react";
 import RichTextEditor from "@/components/RichTextEditor";
 import { slugify } from "@/lib/security";
@@ -95,6 +99,11 @@ export default function ArticleEditorForm({
       : ""
   );
 
+  // Google AI Studio generator state inside editor
+  const [aiCustomTopic, setAiCustomTopic] = useState("");
+  const [aiGeneratingSingle, setAiGeneratingSingle] = useState(false);
+  const [aiGeneratingBatch, setAiGeneratingBatch] = useState(false);
+
   const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -134,6 +143,114 @@ export default function ArticleEditorForm({
     setSelectedTagIds((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
+  };
+
+  const handleGenerateIntoEditorWithAi = async () => {
+    setAiGeneratingSingle(true);
+    setError("");
+    setNotice("");
+
+    try {
+      const res = await fetch("/api/admin/ai/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          mode: "single_preview",
+          categoryId,
+          customTopic: aiCustomTopic.trim() || undefined,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.article) {
+        setError(
+          data.error || "Unable to generate article with Google AI Studio."
+        );
+        return;
+      }
+
+      const gen = data.article;
+      setTitle(gen.title);
+      setSlug(gen.slug);
+      setSlugManuallyEdited(true);
+      setExcerpt(gen.excerpt);
+      setContent(gen.content);
+      setType(gen.type);
+      if (gen.categoryId) setCategoryId(gen.categoryId);
+      setCoverImage(gen.coverImage);
+      setImageAlt(gen.imageAlt);
+      setImageCaption(gen.imageCaption || "");
+      setMetaTitle(gen.metaTitle || "");
+      setMetaDescription(gen.metaDescription || "");
+      setSourceName(gen.sourceName || "");
+      setSourceUrl(gen.sourceUrl || "");
+      setIsEditorsPick(Boolean(gen.isEditorsPick));
+
+      if (Array.isArray(gen.tagIds) && gen.tagIds.length > 0) {
+        setSelectedTagIds(gen.tagIds);
+      } else if (Array.isArray(gen.tagNames)) {
+        const matchedIds = tags
+          .filter((t) =>
+            gen.tagNames.some(
+              (name: string) =>
+                name.toLowerCase() === t.name.toLowerCase() ||
+                slugify(name) === t.slug
+            )
+          )
+          .map((t) => t._id);
+        if (matchedIds.length > 0) setSelectedTagIds(matchedIds);
+      }
+
+      setNotice(
+        `Google AI Studio generated article "${gen.title}" and uploaded cover image (${gen.coverImage}) with all required attributes for ${gen.categoryName}! Review below and click Publish or Save.`
+      );
+    } catch {
+      setError("Network error while calling Google AI Studio API.");
+    } finally {
+      setAiGeneratingSingle(false);
+    }
+  };
+
+  const handleBatchGenerateThreeForCategory = async () => {
+    setAiGeneratingBatch(true);
+    setError("");
+    setNotice("");
+
+    try {
+      const targetStatus: ArticleStatus =
+        user.role === "ADMIN" || user.role === "EDITOR"
+          ? "PUBLISHED"
+          : "REVIEW";
+      const res = await fetch("/api/admin/ai/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          mode: "daily_batch",
+          categoryId,
+          articlesPerCategory: 3,
+          targetStatus,
+          force: true,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(
+          data.error || "Failed to generate 3 daily articles for category."
+        );
+        return;
+      }
+
+      setNotice(
+        `Created and uploaded ${data.totalCreated} latest articles with images & all attributes! Redirecting to Article Management...`
+      );
+      setTimeout(() => {
+        router.push("/admin/articles");
+        router.refresh();
+      }, 1100);
+    } catch {
+      setError("Network error while running 3-article category batch.");
+    } finally {
+      setAiGeneratingBatch(false);
+    }
   };
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -232,9 +349,118 @@ export default function ArticleEditorForm({
 
   const canPublishOrArchive =
     user.role === "ADMIN" || user.role === "EDITOR";
+  const activeCategory =
+    categories.find((c) => c._id === categoryId) || categories[0];
 
   return (
     <div className="space-y-8">
+      {/* Google AI Studio One-Click Article & Image Generator Bar */}
+      <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white p-6 rounded-lg border border-blue-800 shadow-sm space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700/80 pb-3">
+          <div className="flex items-center gap-2.5">
+            <Sparkles className="w-5 h-5 text-blue-400 shrink-0" />
+            <div>
+              <h2 className="font-serif text-lg font-bold text-white">
+                Google AI Studio Article &amp; Cover Image Generator
+              </h2>
+              <p className="text-xs text-slate-300">
+                Auto-generate headline, slug, excerpt, structured HTML body, SEO
+                metadata, citations, tags, and uploaded cover image for{" "}
+                <strong>{activeCategory?.name || "selected category"}</strong>.
+              </p>
+            </div>
+          </div>
+
+          <Link
+            href="/admin/ai-studio"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-800/70 hover:bg-blue-700 text-blue-100 border border-blue-600 rounded text-xs font-semibold shrink-0 transition-colors"
+          >
+            <Layers className="w-3.5 h-3.5" />
+            <span>Open Full Daily 3/Category AI Studio &rarr;</span>
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-end">
+          <div className="md:col-span-3">
+            <label
+              htmlFor="ai-editor-cat"
+              className="block text-[11px] font-bold uppercase tracking-wider text-blue-200 mb-1"
+            >
+              Target Admin Category
+            </label>
+            <select
+              id="ai-editor-cat"
+              value={categoryId}
+              onChange={(e) => setCategoryId(e.target.value)}
+              className="w-full px-3 py-2 text-xs text-slate-900 bg-white border border-slate-300 rounded-md font-medium"
+            >
+              {categories.map((cat) => (
+                <option key={cat._id} value={cat._id}>
+                  {cat.name} (/category/{cat.slug})
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="md:col-span-4">
+            <label
+              htmlFor="ai-editor-topic"
+              className="block text-[11px] font-bold uppercase tracking-wider text-blue-200 mb-1"
+            >
+              Optional Topic / Angle (Leave blank for today&apos;s latest)
+            </label>
+            <input
+              id="ai-editor-topic"
+              type="text"
+              value={aiCustomTopic}
+              onChange={(e) => setAiCustomTopic(e.target.value)}
+              placeholder={`e.g., Latest ${
+                activeCategory?.name || "Tech"
+              } architecture analysis...`}
+              className="w-full px-3 py-2 text-xs text-slate-900 bg-white border border-slate-300 rounded-md"
+            />
+          </div>
+
+          <div className="md:col-span-5 flex flex-col sm:flex-row gap-2">
+            <button
+              type="button"
+              disabled={aiGeneratingSingle || aiGeneratingBatch}
+              onClick={handleGenerateIntoEditorWithAi}
+              className="flex-1 py-2 px-3 bg-blue-600 hover:bg-blue-500 disabled:opacity-60 text-white text-xs font-bold uppercase tracking-wider rounded-md flex items-center justify-center gap-1.5 transition-colors"
+            >
+              {aiGeneratingSingle ? (
+                <>
+                  <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                  <span>Generating into Form...</span>
+                </>
+              ) : (
+                <>
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Generate Article &amp; Image into Form</span>
+                </>
+              )}
+            </button>
+
+            <button
+              type="button"
+              disabled={aiGeneratingSingle || aiGeneratingBatch}
+              onClick={handleBatchGenerateThreeForCategory}
+              className="py-2 px-3 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-60 text-white text-xs font-bold uppercase tracking-wider rounded-md flex items-center justify-center gap-1.5 transition-colors"
+              title="Immediately generate and save 3 latest articles with images for this category"
+            >
+              {aiGeneratingBatch ? (
+                <>
+                  <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                  <span>Creating 3...</span>
+                </>
+              ) : (
+                <span>+ Auto-Create 3 Daily</span>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
       {error && (
         <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-sm text-red-800 flex items-center gap-2.5">
           <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
@@ -569,6 +795,17 @@ export default function ArticleEditorForm({
             <h2 className="font-serif text-lg font-bold text-slate-900 border-b border-slate-200 pb-2">
               Cover Image &amp; Accessibility
             </h2>
+
+            {coverImage && (
+              <div className="aspect-[16/9] rounded-md overflow-hidden bg-slate-100 border border-slate-200">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={coverImage}
+                  alt={imageAlt || "Cover preview"}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
 
             <div>
               <label

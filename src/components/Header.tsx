@@ -89,16 +89,16 @@ export default function Header() {
             aria-label="TechLedger Home"
           >
             <div className="flex items-baseline tracking-tight">
-              <span className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
+              <span className="font-serif text-2xl sm:text-3xl font-bold text-slate-700">
                 Tech
               </span>
-              <span className="font-serif text-2xl sm:text-3xl font-bold text-blue-700">
+              <span className="font-serif text-2xl sm:text-3xl font-bold text-red-700">
                 Ledger
               </span>
-              <span className="ml-1.5 inline-block w-2 h-2 rounded-full bg-blue-700 group-hover:bg-slate-900 transition-colors" />
+              <span className="ml-1.5 inline-block w-2 h-2 rounded-full bg-black group-hover:bg-slate-900 transition-colors" />
             </div>
             <span className="text-[11px] uppercase tracking-widest text-slate-500 font-medium">
-              US Technology, AI &amp; Engineering Publication
+              Daily News, Technology, Business
             </span>
           </Link>
 
@@ -131,7 +131,7 @@ export default function Header() {
             </form>
             <Link
               href="/contact"
-              className="px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-white bg-blue-700 hover:bg-blue-800 rounded-md transition-colors"
+              className="px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-white bg-red-700 hover:bg-blue-800 rounded-md transition-colors"
             >
               Send News Tip
             </Link>

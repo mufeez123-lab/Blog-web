@@ -7,6 +7,8 @@ import {
   LayoutDashboard,
   FileText,
   PlusCircle,
+  Sparkles,
+  Mail,
   FolderTree,
   Tags,
   Users,
@@ -38,6 +40,12 @@ export default function AdminNav({ user }: AdminNavProps) {
       roles: ["ADMIN", "EDITOR", "AUTHOR"],
     },
     {
+      label: "AI Studio (Daily 3)",
+      href: "/admin/ai-studio",
+      icon: Sparkles,
+      roles: ["ADMIN", "EDITOR", "AUTHOR"],
+    },
+    {
       label: "Articles",
       href: "/admin/articles",
       icon: FileText,
@@ -48,6 +56,12 @@ export default function AdminNav({ user }: AdminNavProps) {
       href: "/admin/articles/new",
       icon: PlusCircle,
       roles: ["ADMIN", "EDITOR", "AUTHOR"],
+    },
+    {
+      label: "Newsletter & Forms",
+      href: "/admin/newsletter",
+      icon: Mail,
+      roles: ["ADMIN", "EDITOR"],
     },
     {
       label: "Categories",
