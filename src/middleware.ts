@@ -1,6 +1,39 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { SESSION_COOKIE_NAME, verifySessionToken } from "@/lib/auth";
+import { jwtVerify } from "jose";
+
+const SESSION_COOKIE_NAME = "techledger_session";
+
+function getEdgeJwtSecretKey(): Uint8Array {
+  const secret =
+    process.env.SESSION_SECRET ||
+    (process.env.NODE_ENV !== "production"
+      ? "dev_only_fallback_secret_key_must_be_at_least_32_bytes_long"
+      : "");
+  return new TextEncoder().encode(secret);
+}
+
+async function verifyEdgeSessionToken(
+  token: string
+): Promise<{ id: string; role: string } | null> {
+  try {
+    const secretKey = getEdgeJwtSecretKey();
+    if (secretKey.byteLength < 32) return null;
+    const { payload } = await jwtVerify(token, secretKey);
+    if (
+      !payload.sub ||
+      !["ADMIN", "EDITOR", "AUTHOR"].includes(String(payload.role))
+    ) {
+      return null;
+    }
+    return {
+      id: payload.sub,
+      role: String(payload.role),
+    };
+  } catch {
+    return null;
+  }
+}
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -25,7 +58,7 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(loginUrl);
     }
 
-    const sessionUser = await verifySessionToken(token);
+    const sessionUser = await verifyEdgeSessionToken(token);
     if (!sessionUser) {
       const loginUrl = new URL("/admin/login", request.url);
       return NextResponse.redirect(loginUrl);
