@@ -8,7 +8,6 @@ import { getWebsiteSettings } from "@/lib/articles";
 import {
   buildOrganizationJsonLd,
   getSiteUrl,
-  isAdSenseConfigured,
 } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -51,28 +50,20 @@ export default async function RootLayout({
 }>) {
   const settings = await getWebsiteSettings();
   const orgJsonLd = buildOrganizationJsonLd();
-  const loadAdSenseScript = isAdSenseConfigured(
-    settings.adsensePublisherId,
-    settings.adsEnabled
-  );
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
 
   return (
     <html lang="en-US">
       <head>
         <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7401741212270720"
+          crossOrigin="anonymous"
+        ></script>
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
-        {loadAdSenseScript && (
-          <Script
-            id="adsense-init"
-            async
-            strategy="afterInteractive"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${settings.adsensePublisherId}`}
-            crossOrigin="anonymous"
-          />
-        )}
         {gaId && (
           <>
             <Script
