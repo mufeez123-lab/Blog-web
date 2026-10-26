@@ -21,7 +21,7 @@
     "jose": "^5.9.6",
     "lucide-react": "^0.469.0",
     "mongoose": "^8.9.5",
-    "next": "15.1.6",
+    "next": "^15.5.28",
     "nodemailer": "^10.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
