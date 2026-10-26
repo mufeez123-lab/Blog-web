@@ -167,7 +167,7 @@ export default function AdminNewsletterPanel() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="font-serif text-3xl font-bold text-slate-900 flex items-center gap-2.5">
-            <Mail className="w-7 h-7 text-blue-700" />
+            <Mail className="w-7 h-7 text-[#da3036]" />
             <span>Newsletter, Email Delivery &amp; Google Forms</span>
           </h1>
           <p className="text-sm text-slate-600 mt-1">
@@ -178,7 +178,7 @@ export default function AdminNewsletterPanel() {
 
         <div className="flex items-center gap-3">
           <div className="px-4 py-2 bg-white border border-slate-200 rounded-md text-xs font-bold text-slate-800 flex items-center gap-2">
-            <Users className="w-4 h-4 text-blue-700" />
+            <Users className="w-4 h-4 text-[#da3036]" />
             <span>Active Subscribers: {activeSubscribersCount}</span>
           </div>
         </div>
@@ -219,7 +219,7 @@ export default function AdminNewsletterPanel() {
         >
           <div className="flex items-center justify-between border-b border-slate-200 pb-3">
             <h2 className="font-serif text-lg font-bold text-slate-900 flex items-center gap-2">
-              <FileSpreadsheet className="w-5 h-5 text-blue-700" />
+              <FileSpreadsheet className="w-5 h-5 text-[#da3036]" />
               <span>Google Forms &amp; SMTP Mail Configuration</span>
             </h2>
             <span
@@ -333,7 +333,7 @@ export default function AdminNewsletterPanel() {
                   type="email"
                   value={smtpUser}
                   onChange={(e) => setSmtpUser(e.target.value)}
-                  placeholder="admintechledger@gmail.com"
+                  placeholder="adminFeezMedia@gmail.com"
                   className="w-full px-3 py-2 text-xs border border-slate-300 rounded-md bg-white"
                 />
               </div>
@@ -378,7 +378,7 @@ export default function AdminNewsletterPanel() {
           <div className="space-y-4">
             <div className="border-b border-slate-200 pb-3">
               <h2 className="font-serif text-lg font-bold text-slate-900 flex items-center gap-2">
-                <Send className="w-5 h-5 text-blue-700" />
+                <Send className="w-5 h-5 text-[#da3036]" />
                 <span>Send Latest Articles Newsletter to Subscribers</span>
               </h2>
               <p className="text-xs text-slate-600 mt-1">
@@ -410,7 +410,7 @@ export default function AdminNewsletterPanel() {
                 type="text"
                 value={customSubject}
                 onChange={(e) => setCustomSubject(e.target.value)}
-                placeholder="Defaults to: TechLedger Weekly Circuit Briefing: [Top Headline]"
+                placeholder="Defaults to: FeezMedia Weekly Circuit Briefing: [Top Headline]"
                 className="w-full px-3 py-2 text-sm border border-slate-300 rounded-md"
               />
             </div>

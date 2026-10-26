@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         ok: true,
-        message: "Your inquiry has been received by the TechLedger editorial desk.",
+        message: "Your inquiry has been received by the FeezMedia editorial desk.",
       },
       { status: 200 }
     );

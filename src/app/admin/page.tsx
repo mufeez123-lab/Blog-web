@@ -81,12 +81,7 @@ export default async function AdminDashboardPage() {
               Generate 3 Latest Articles &amp; Cover Images Daily per Category (
               {categories.length} Active Categories)
             </h2>
-            <p className="text-xs text-slate-300 max-w-2xl">
-              Automatically creates 3 latest articles with uploaded 16:9 cover
-              images and all 16 required attributes (headline, slug, excerpt,
-              HTML body, type, SEO metadata, citations, and tags) for{" "}
-              {categories.map((c) => c.name).join(", ")}.
-            </p>
+            
           </div>
           <Link
             href="/admin/ai-studio"
@@ -108,7 +103,7 @@ export default async function AdminDashboardPage() {
                 {allArticles.total}
               </div>
             </div>
-            <FileText className="w-8 h-8 text-blue-700 opacity-80" />
+            <FileText className="w-8 h-8 text-[#da3036] opacity-80" />
           </div>
 
           <div className="bg-white p-5 rounded-lg border border-slate-200 flex items-center justify-between">
@@ -157,7 +152,7 @@ export default async function AdminDashboardPage() {
               </h2>
               <Link
                 href="/admin/articles"
-                className="text-xs font-semibold text-blue-700 hover:underline"
+                className="text-xs font-semibold text-[#da3036] hover:underline"
               >
                 Manage All Articles &rarr;
               </Link>
@@ -201,7 +196,7 @@ export default async function AdminDashboardPage() {
                       <td className="px-4 py-3.5 text-right space-x-2 text-xs">
                         <Link
                           href={`/admin/articles/${article._id}/edit`}
-                          className="font-semibold text-blue-700 hover:underline"
+                          className="font-semibold text-[#da3036] hover:underline"
                         >
                           Edit
                         </Link>
@@ -225,7 +220,7 @@ export default async function AdminDashboardPage() {
           {/* Right Column: Editorial Verification Protocol & Audit Log */}
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-white rounded-lg border border-slate-200 p-6 space-y-3">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-700">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#da3036]">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Editorial Verification Protocol</span>
               </div>
@@ -244,7 +239,7 @@ export default async function AdminDashboardPage() {
             <div className="bg-white rounded-lg border border-slate-200 p-6 space-y-4">
               <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                 <h2 className="font-serif text-base font-bold text-slate-900 flex items-center gap-1.5">
-                  <Activity className="w-4 h-4 text-blue-700" />
+                  <Activity className="w-4 h-4 text-[#da3036]" />
                   <span>Recent Audit Log</span>
                 </h2>
               </div>

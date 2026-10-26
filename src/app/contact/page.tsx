@@ -45,11 +45,11 @@ export default function ContactPage() {
 
       <div className="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 space-y-8">
         <header className="border-b border-slate-200 pb-6">
-          <div className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#da3036] mb-2">
             Reader &amp; Press Inquiries
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
-            Contact the TechLedger Desk
+            Contact the FeezMedia Desk
           </h1>
           <p className="text-base text-slate-600 mt-2">
             Submit a news tip, request a factual correction, or inquire about
@@ -61,15 +61,15 @@ export default function ContactPage() {
           <div className="md:col-span-5 space-y-5 text-sm text-slate-600">
             <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-2">
               <div className="font-semibold text-slate-900 flex items-center gap-2">
-                <Mail className="w-4 h-4 text-blue-700" />
+                <Mail className="w-4 h-4 text-[#da3036]" />
                 <span>Direct Editorial Email</span>
               </div>
               <p>
                 <a
-                  href="mailto:editorial@techledger.us"
-                  className="text-blue-700 font-medium hover:underline"
+                  href="mailto:mufizmalar@gmail.com"
+                  className="text-[#da3036] font-medium hover:underline"
                 >
-                  editorial@techledger.us
+                  mufizmalar@gmail.com
                 </a>
               </p>
               <p className="text-xs text-slate-500">
@@ -94,7 +94,7 @@ export default function ContactPage() {
                 Operating Transparency
               </h2>
               <p className="text-xs leading-relaxed">
-                TechLedger serves readers across the United States and is
+                FeezMedia serves readers across the  and is
                 operated by an independent editorial and engineering team based
                 in India.
               </p>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                   <span>Message Received</span>
                 </div>
                 <p className="text-sm">
-                  Thank you for contacting TechLedger. Our editorial team has
+                  Thank you for contacting FeezMedia. Our editorial team has
                   logged your inquiry and will review it promptly.
                 </p>
                 <button

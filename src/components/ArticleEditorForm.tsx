@@ -41,7 +41,7 @@ export default function ArticleEditorForm({
 }: ArticleEditorFormProps) {
   const router = useRouter();
   const isEditing = Boolean(initialArticle?._id);
-  const draftStorageKey = `techledger_autosave_${initialArticle?._id || "new"}`;
+  const draftStorageKey = `FeezMedia_autosave_${initialArticle?._id || "new"}`;
 
   const [title, setTitle] = useState(initialArticle?.title || "");
   const [slug, setSlug] = useState(initialArticle?.slug || "");
@@ -492,7 +492,7 @@ export default function ArticleEditorForm({
                 required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                placeholder="Clear, accurate US editorial headline without clickbait..."
+                placeholder="Enter headline"
                 className="w-full px-3.5 py-2.5 text-base font-serif font-bold border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700"
               />
             </div>
@@ -634,7 +634,7 @@ export default function ArticleEditorForm({
                 type="url"
                 value={canonicalUrl}
                 onChange={(e) => setCanonicalUrl(e.target.value)}
-                placeholder="Leave blank to use default TechLedger article URL"
+                placeholder="Leave blank to use default FeezMedia article URL"
                 className="w-full px-3 py-2 text-sm border border-slate-300 rounded-md"
               />
             </div>
@@ -890,7 +890,7 @@ export default function ArticleEditorForm({
                   type="checkbox"
                   checked={isEditorsPick}
                   onChange={(e) => setIsEditorsPick(e.target.checked)}
-                  className="rounded border-slate-300 text-blue-700 focus:ring-blue-700"
+                  className="rounded border-slate-300 text-[#da3036] focus:ring-blue-700"
                 />
                 <span className="font-medium">
                   Feature in Editor&apos;s Selections
@@ -903,7 +903,7 @@ export default function ArticleEditorForm({
                 type="checkbox"
                 checked={isSponsored}
                 onChange={(e) => setIsSponsored(e.target.checked)}
-                className="rounded border-slate-300 text-blue-700 focus:ring-blue-700"
+                className="rounded border-slate-300 text-[#da3036] focus:ring-blue-700"
               />
               <span className="font-medium">
                 Label as Sponsored Content (FTC Disclosure)

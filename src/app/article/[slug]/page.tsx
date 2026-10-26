@@ -34,7 +34,7 @@ export async function generateMetadata({
   const article = await getPublishedArticleBySlug(slug);
   if (!article) {
     return {
-      title: "Article Not Found | TechLedger",
+      title: "Article Not Found | FeezMedia",
       robots: { index: false, follow: false },
     };
   }
@@ -93,7 +93,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href={`/category/${article.category.slug}`}
-              className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded hover:bg-blue-100 transition-colors"
+              className="text-xs font-bold uppercase tracking-wider text-[#da3036] bg-blue-50 px-3 py-1 rounded hover:bg-blue-100 transition-colors"
             >
               {article.category.name}
             </Link>
@@ -128,7 +128,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <div>
                 <strong>Sponsored Disclosure:</strong> This article is sponsored
                 {article.sponsorName ? ` by ${article.sponsorName}` : ""}. All
-                sponsored placements on TechLedger are clearly labeled in
+                sponsored placements on FeezMedia are clearly labeled in
                 accordance with US FTC endorsement guidelines and Google
                 publisher policies.
               </div>
@@ -143,12 +143,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </div>
               <div>
                 <div className="font-semibold text-slate-900 flex items-center gap-1.5">
-                  <a href="#author-bio" className="hover:text-blue-700">
+                  <a href="#author-bio" className="hover:text-[#da3036]">
                     {article.author.name}
                   </a>
                   <UserCheck
-                    className="w-3.5 h-3.5 text-blue-700"
-                    aria-label="Verified TechLedger Contributor"
+                    className="w-3.5 h-3.5 text-[#da3036]"
+                    aria-label="Verified FeezMedia Contributor"
                   />
                 </div>
                 <div className="text-xs text-slate-500">
@@ -223,7 +223,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   href={article.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
-                  className="inline-flex items-center gap-1 text-blue-700 font-semibold hover:underline shrink-0"
+                  className="inline-flex items-center gap-1 text-[#da3036] font-semibold hover:underline shrink-0"
                 >
                   <span>View Original Source</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -243,7 +243,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <Link
                   key={tag._id}
                   href={`/tag/${tag.slug}`}
-                  className="text-xs font-medium text-slate-700 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 px-3 py-1 rounded-full transition-colors"
+                  className="text-xs font-medium text-slate-700 bg-slate-100 hover:bg-blue-50 hover:text-[#da3036] px-3 py-1 rounded-full transition-colors"
                 >
                   #{tag.name}
                 </Link>
@@ -297,18 +297,18 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 {article.author.name.charAt(0).toUpperCase()}
               </div>
               <div className="space-y-1.5">
-                <div className="text-xs font-bold uppercase tracking-wider text-blue-700">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#da3036]">
                   Written By
                 </div>
                 <h2 className="font-serif text-lg font-bold text-slate-900">
                   {article.author.name}
                 </h2>
                 <p className="text-xs font-medium text-slate-500">
-                  {article.author.title || "TechLedger Staff Writer"}
+                  {article.author.title || "FeezMedia Staff Writer"}
                 </p>
                 <p className="text-sm text-slate-600 leading-relaxed pt-1">
                   {article.author.bio ||
-                    "Contributing writer and analyst at TechLedger covering US technology, software engineering architecture, and enterprise systems."}
+                    "Contributing writer and analyst at FeezMedia covering US technology, software engineering architecture, and enterprise systems."}
                 </p>
               </div>
             </div>
@@ -334,7 +334,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               id="related-articles-heading"
               className="font-serif text-2xl font-bold text-slate-900"
             >
-              Related Reading on TechLedger
+              Related Reading on FeezMedia
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

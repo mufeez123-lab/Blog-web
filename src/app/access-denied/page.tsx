@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ShieldAlert } from "lucide-react";
 
 export const metadata = {
-  title: "Access Denied | TechLedger",
+  title: "Access Denied | FeezMedia",
   robots: { index: false, follow: false },
 };
 
@@ -18,7 +18,7 @@ export default function AccessDeniedPage() {
       </h1>
       <p className="text-sm text-slate-600 leading-relaxed">
         Your current account role does not have permission to perform this
-        administrative operation. Contact a TechLedger Administrator if you
+        administrative operation. Contact a FeezMedia Administrator if you
         require elevated editorial permissions.
       </p>
       <div className="flex justify-center gap-3 pt-2">

@@ -4,16 +4,16 @@ import React, { useEffect, useState } from "react";
 import { Settings, Save } from "lucide-react";
 
 export default function AdminSettingsPage() {
-  const [siteName, setSiteName] = useState("TechLedger");
+  const [siteName, setSiteName] = useState("FeezMedia");
   const [tagline, setTagline] = useState("");
-  const [logoText, setLogoText] = useState("TechLedger");
+  const [logoText, setLogoText] = useState("FeezMedia");
   const [siteDescription, setSiteDescription] = useState("");
   const [defaultMetaTitle, setDefaultMetaTitle] = useState("");
   const [defaultMetaDescription, setDefaultMetaDescription] = useState("");
   const [adsensePublisherId, setAdsensePublisherId] = useState("");
   const [adsEnabled, setAdsEnabled] = useState(false);
   const [consentBannerEnabled, setConsentBannerEnabled] = useState(true);
-  const [contactEmail, setContactEmail] = useState("editorial@techledger.us");
+  const [contactEmail, setContactEmail] = useState("mufizmalar@gmail.com");
   const [footerText, setFooterText] = useState("");
   const [operatingDisclosure, setOperatingDisclosure] = useState("");
   const [message, setMessage] = useState("");
@@ -25,16 +25,16 @@ export default function AdminSettingsPage() {
       .then((data) => {
         if (data.settings) {
           const s = data.settings;
-          setSiteName(s.siteName || "TechLedger");
+          setSiteName(s.siteName || "FeezMedia");
           setTagline(s.tagline || "");
-          setLogoText(s.logoText || "TechLedger");
+          setLogoText(s.logoText || "FeezMedia");
           setSiteDescription(s.siteDescription || "");
           setDefaultMetaTitle(s.defaultMetaTitle || "");
           setDefaultMetaDescription(s.defaultMetaDescription || "");
           setAdsensePublisherId(s.adsensePublisherId || "");
           setAdsEnabled(Boolean(s.adsEnabled));
           setConsentBannerEnabled(Boolean(s.consentBannerEnabled));
-          setContactEmail(s.contactEmail || "editorial@techledger.us");
+          setContactEmail(s.contactEmail || "mufizmalar@gmail.com");
           setFooterText(s.footerText || "");
           setOperatingDisclosure(s.operatingDisclosure || "");
         }
@@ -78,7 +78,7 @@ export default function AdminSettingsPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       <div>
         <h1 className="font-serif text-3xl font-bold text-slate-900 flex items-center gap-2">
-          <Settings className="w-6 h-6 text-blue-700" />
+          <Settings className="w-6 h-6 text-[#da3036]" />
           Website &amp; Google AdSense Settings
         </h1>
         <p className="text-sm text-slate-600 mt-1">
@@ -183,7 +183,7 @@ export default function AdminSettingsPage() {
                 type="checkbox"
                 checked={adsEnabled}
                 onChange={(e) => setAdsEnabled(e.target.checked)}
-                className="rounded border-slate-300 text-blue-700"
+                className="rounded border-slate-300 text-[#da3036]"
               />
               <span className="font-medium">
                 Enable AdSlot Placements Globally
@@ -195,7 +195,7 @@ export default function AdminSettingsPage() {
                 type="checkbox"
                 checked={consentBannerEnabled}
                 onChange={(e) => setConsentBannerEnabled(e.target.checked)}
-                className="rounded border-slate-300 text-blue-700"
+                className="rounded border-slate-300 text-[#da3036]"
               />
               <span className="font-medium">
                 Display Privacy &amp; Cookie Consent Banner

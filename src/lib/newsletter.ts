@@ -92,7 +92,7 @@ export async function resolveNewsletterConfig(): Promise<NewsletterConfig> {
     String(dbSettings?.smtpFrom || "").trim() ||
     process.env.SMTP_FROM?.trim() ||
     smtpUser ||
-    "TechLedger Circuit Briefing <editorial@techledger.us>";
+    "FeezMedia Circuit Briefing <mufizmalar@gmail.com>";
 
   return {
     googleFormUrl,
@@ -163,7 +163,7 @@ export async function syncSubscriberToGoogleForms(params: {
 }
 
 /**
- * Builds the HTML & plain-text newsletter body featuring the latest published TechLedger articles.
+ * Builds the HTML & plain-text newsletter body featuring the latest published FeezMedia articles.
  */
 export function buildNewsletterEmailContent(params: {
   subscriberEmail: string;
@@ -188,18 +188,18 @@ export function buildNewsletterEmailContent(params: {
   const subject =
     params.customSubject?.trim() ||
     (params.isWelcome
-      ? `Welcome to TechLedger Circuit Briefing — Latest US Tech & AI Digest (${dateLabel})`
-      : `TechLedger Weekly Circuit Briefing: ${
-          params.articles[0]?.title || `Latest US Tech & AI (${dateLabel})`
+      ? `Welcome to FeezMedia Circuit Briefing — Latest Tech & AI Digest (${dateLabel})`
+      : `FeezMedia Weekly Circuit Briefing: ${
+          params.articles[0]?.title || `Latest Tech & AI (${dateLabel})`
         }`);
 
   const introParagraph =
     params.customIntro?.trim() ||
     (params.isWelcome
-      ? `Thank you for subscribing to The Weekly Circuit Briefing (${params.subscriberEmail}). Below is your immediate edition featuring our latest US technology reporting, enterprise AI analysis, and software engineering guides.`
+      ? `Thank you for subscribing to The Daily Circuit Briefing (${params.subscriberEmail}). Below is your immediate edition featuring our latest US technology reporting, enterprise AI analysis, and software engineering guides.`
       : params.alreadySubscribed
-      ? `You are an active subscriber to The Weekly Circuit Briefing (${params.subscriberEmail}). Here is the latest edition of our top published stories and engineering guides.`
-      : `Here are the latest original articles, enterprise AI analyses, and engineering guides published on TechLedger for ${dateLabel}.`);
+      ? `You are an active subscriber to The Daily Circuit Briefing (${params.subscriberEmail}). Here is the latest edition of our top published stories and engineering guides.`
+      : `Here are the latest original articles, enterprise AI analyses, and engineering guides published on FeezMedia for ${dateLabel}.`);
 
   const articlesHtml = params.articles
     .map((art) => {
@@ -237,13 +237,13 @@ export function buildNewsletterEmailContent(params: {
     <tr>
       <td style="background-color: #0f172a; color: #ffffff; padding: 28px 32px;">
         <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #60a5fa; margin-bottom: 6px;">
-          The Weekly Circuit Briefing &bull; ${dateLabel}
+          The Daily Circuit Briefing &bull; ${dateLabel}
         </div>
         <h1 style="margin: 0; font-family: Georgia, serif; font-size: 26px; font-weight: 700; color: #ffffff;">
-          TechLedger
+          FeezMedia
         </h1>
         <p style="margin: 6px 0 0 0; font-size: 13px; color: #cbd5e1;">
-          US Technology News, Artificial Intelligence &amp; Full-Stack Engineering Briefings
+          Technology News, Artificial Intelligence &amp; Full-Stack Engineering Briefings
         </p>
       </td>
     </tr>
@@ -259,9 +259,9 @@ export function buildNewsletterEmailContent(params: {
     </tr>
     <tr>
       <td style="background-color: #f1f5f9; padding: 20px 32px; font-size: 12px; color: #64748b; line-height: 1.6;">
-        <div>Sent to <strong>${params.subscriberEmail}</strong> because you subscribed to TechLedger's Weekly Circuit Briefing.</div>
+        <div>Sent to <strong>${params.subscriberEmail}</strong> because you subscribed to FeezMedia's Weekly Circuit Briefing.</div>
         <div style="margin-top: 8px;">
-          <a href="${siteUrl}" style="color: #1d4ed8; text-decoration: underline;">Visit TechLedger</a>
+          <a href="${siteUrl}" style="color: #1d4ed8; text-decoration: underline;">Visit FeezMedia</a>
           &nbsp;&bull;&nbsp;
           <a href="${unsubscribeUrl}" style="color: #64748b; text-decoration: underline;">Unsubscribe instantly</a>
         </div>
@@ -272,7 +272,7 @@ export function buildNewsletterEmailContent(params: {
 </html>`;
 
   const text = [
-    `TECHLEDGER — THE WEEKLY CIRCUIT BRIEFING (${dateLabel})`,
+    `FeezMedia — THE WEEKLY CIRCUIT BRIEFING (${dateLabel})`,
     "",
     introParagraph,
     "",
@@ -529,7 +529,7 @@ export async function subscribeAndSendNewsletter(params: {
 }
 
 /**
- * Broadcasts the latest TechLedger newsletter to all active subscribers (`status === "SUBSCRIBED"`).
+ * Broadcasts the latest FeezMedia newsletter to all active subscribers (`status === "SUBSCRIBED"`).
  */
 export async function broadcastNewsletterToSubscribers(options?: {
   customSubject?: string;

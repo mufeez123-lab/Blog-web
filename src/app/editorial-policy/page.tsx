@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Editorial Policy & Standards",
   description:
-    "TechLedger's editorial workflow, primary source verification rules, AI assistance standards, and sponsored content disclosures.",
+    "FeezMedia's editorial workflow, primary source verification rules, AI assistance standards, and sponsored content disclosures.",
 };
 
 export default function EditorialPolicyPage() {
@@ -18,14 +18,14 @@ export default function EditorialPolicyPage() {
 
       <div className="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 space-y-8">
         <header className="border-b border-slate-200 pb-6">
-          <div className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#da3036] mb-2">
             Trust &amp; Governance
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
             Editorial Policy &amp; Standards
           </h1>
           <p className="text-base text-slate-600 mt-2">
-            How TechLedger researches, verifies, edits, and labels technology
+            How FeezMedia researches, verifies, edits, and labels technology
             journalism and engineering tutorials.
           </p>
         </header>
@@ -33,7 +33,7 @@ export default function EditorialPolicyPage() {
         <div className="prose-editorial max-w-none">
           <h2>1. Commitment to Originality and Verification</h2>
           <p>
-            Every article published on TechLedger must provide original
+            Every article published on FeezMedia must provide original
             analysis, clear technical explanation, or verified industry context.
             We strictly prohibit plagiarism, automated scraping of other
             publications, clickbait headlines, and fabricated breaking news.
@@ -91,7 +91,7 @@ export default function EditorialPolicyPage() {
           <p>
             Articles in our Business &amp; Markets section explain technology
             industry trends, cloud economics, and financial concepts for general
-            educational purposes. Nothing on TechLedger constitutes personalized
+            educational purposes. Nothing on FeezMedia constitutes personalized
             investment, legal, or tax advice.
           </p>
 

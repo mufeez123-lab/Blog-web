@@ -42,18 +42,18 @@ export default function ArticleCard({
               />
             </Link>
           </div>
-          <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between">
+          <div className="lg:col-span-5 p-6 sm:p-5 flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex flex-wrap items-center gap-2">
                 <Link
                   href={`/category/${article.category.slug}`}
-                  className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded hover:bg-blue-100 transition-colors"
+                  className="text-xs font-bold uppercase tracking-wider text-[#da3036] bg-blue-50 px-2.5 py-1 rounded hover:bg-blue-100 transition-colors"
                 >
                   {article.category.name}
                 </Link>
                 {article.isEditorsPick && (
                   <span className="inline-flex items-center gap-1 text-xs font-semibold text-slate-700 bg-slate-100 px-2.5 py-1 rounded">
-                    <Bookmark className="w-3 h-3 text-blue-700" />
+                    <Bookmark className="w-3 h-3 text-[#da3036]" />
                     Editor&apos;s Selection
                   </span>
                 )}
@@ -72,7 +72,7 @@ export default function ArticleCard({
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
                 <Link
                   href={`/article/${article.slug}`}
-                  className="hover:text-blue-700 transition-colors"
+                  className="hover:text-[#da3036] transition-colors"
                 >
                   {article.title}
                 </Link>
@@ -113,7 +113,7 @@ export default function ArticleCard({
           <div className="flex items-center gap-2">
             <Link
               href={`/category/${article.category.slug}`}
-              className="text-[11px] font-bold uppercase tracking-wider text-blue-700 hover:underline"
+              className="text-[11px] font-bold uppercase tracking-wider text-[#da3036] hover:underline"
             >
               {article.category.name}
             </Link>
@@ -126,7 +126,7 @@ export default function ArticleCard({
           <h3 className="font-serif text-base font-bold text-slate-900 leading-snug">
             <Link
               href={`/article/${article.slug}`}
-              className="hover:text-blue-700 transition-colors"
+              className="hover:text-[#da3036] transition-colors"
             >
               {article.title}
             </Link>
@@ -163,7 +163,7 @@ export default function ArticleCard({
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href={`/category/${article.category.slug}`}
-              className="text-xs font-bold uppercase tracking-wider text-blue-700 hover:underline"
+              className="text-xs font-bold uppercase tracking-wider text-[#da3036] hover:underline"
             >
               {article.category.name}
             </Link>
@@ -182,7 +182,7 @@ export default function ArticleCard({
           <h3 className="font-serif text-lg font-bold text-slate-900 leading-snug">
             <Link
               href={`/article/${article.slug}`}
-              className="hover:text-blue-700 transition-colors"
+              className="hover:text-[#da3036] transition-colors"
             >
               {article.title}
             </Link>

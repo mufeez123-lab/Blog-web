@@ -2,7 +2,7 @@ import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import type { ArticleStatus, SessionUser, UserRole } from "@/types";
 
-export const SESSION_COOKIE_NAME = "techledger_session";
+export const SESSION_COOKIE_NAME = "FeezMedia_session";
 const SESSION_DURATION_SECONDS = 60 * 60 * 24 * 7; // 7 days
 
 function getJwtSecretKey(): Uint8Array {

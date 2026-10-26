@@ -7,7 +7,7 @@ import { getPublishedArticles } from "@/lib/articles";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "US Technology News — Cloud, Security & Developer Ecosystem",
+  title: "Technology News — Cloud, Security & Developer Ecosystem",
   description:
     "Coverage of major US technology company announcements, software and hardware releases, cybersecurity posture, and digital privacy policy.",
 };
@@ -35,7 +35,7 @@ export default async function TechnologyNewsPage({
       />
 
       <header className="border-b-2 border-slate-900 pb-5">
-        <div className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-1">
+        <div className="text-xs font-bold uppercase tracking-widest text-[#da3036] mb-1">
           Section Desk
         </div>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">

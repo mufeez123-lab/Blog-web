@@ -7,29 +7,33 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300 border-t border-slate-800 mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-slate-800">
           {/* Column 1: Brand Identity */}
           <div className="space-y-3">
             <Link href="/" className="inline-flex items-baseline">
               <span className="font-serif text-2xl font-bold text-white">
-                Tech
+                {/* Feez */}
               </span>
               <span className="font-serif text-2xl font-bold text-blue-400">
-                Ledger
+                {/* Media */}
               </span>
+               <span className="ml-1.5 mr-1.5 inline-block w-2 h-2 rounded-full bg-white group-hover:bg-slate-900 transition-colors" />
+                 <span className="font-serif text-2xl sm:text-3xl font-bold text-red-700">
+                  live
+                </span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Independent digital publication delivering US technology
+              Independent digital publication delivering technology
               journalism, artificial intelligence analysis, business explainers,
               and practical software engineering guides.
             </p>
             <p className="text-xs text-slate-400 pt-1">
               Editorial Contact:{" "}
               <a
-                href="mailto:editorial@techledger.us"
+                href="mailto:mufizmalar@gmail.com"
                 className="text-blue-400 hover:underline"
               >
-                editorial@techledger.us
+                mufizmalar@gmail.com
               </a>
             </p>
           </div>
@@ -132,7 +136,40 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Standards, Legal & Policies */}
+          {/* Column 4: PDF & Document Services */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
+              PDF Services
+            </h3>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <Link
+                  href="/tools?tool=merge-split"
+                  className="hover:text-white transition-colors"
+                >
+                  Merge and split PDFs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools?tool=compress-pdf"
+                  className="hover:text-white transition-colors"
+                >
+                  Compress PDF files
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools?tool=images-to-pdf"
+                  className="hover:text-white transition-colors"
+                >
+                  Convert images to PDF
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 5: Standards, Legal & Policies */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
               Policies &amp; Governance
@@ -143,7 +180,7 @@ export default function Footer() {
                   href="/about"
                   className="hover:text-white transition-colors"
                 >
-                  About TechLedger
+                  About FeezMedia
                 </Link>
               </li>
               <li>
@@ -202,7 +239,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-slate-400">
           <div className="space-y-1">
             <p>
-              &copy; {currentYear} TechLedger Digital Publication. All rights
+              &copy; {currentYear} FeezMedia Digital Publication. All rights
               reserved.
             </p>
             <p className="text-slate-400">
@@ -219,12 +256,7 @@ export default function Footer() {
             >
               Privacy &amp; Ad Preferences
             </Link>
-            <Link
-              href="/admin/login"
-              className="hover:text-white transition-colors"
-            >
-              Staff Login
-            </Link>
+          
           </div>
         </div>
       </div>

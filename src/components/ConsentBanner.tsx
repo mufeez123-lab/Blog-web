@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-const CONSENT_STORAGE_KEY = "techledger_privacy_consent_v1";
+const CONSENT_STORAGE_KEY = "FeezMedia_privacy_consent_v1";
 
 export default function ConsentBanner() {
   const [visible, setVisible] = useState(false);
@@ -47,7 +47,7 @@ export default function ConsentBanner() {
           <strong className="text-white font-semibold">
             Privacy &amp; Cookie Notice:
           </strong>{" "}
-          TechLedger uses essential cookies for site security and session
+          FeezMedia uses essential cookies for site security and session
           integrity, and optional analytics/advertising cookies (including
           Google AdSense when enabled) to support free independent journalism.
           Read our{" "}

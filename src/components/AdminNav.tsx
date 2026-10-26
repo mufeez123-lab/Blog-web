@@ -75,12 +75,7 @@ export default function AdminNav({ user }: AdminNavProps) {
       icon: Tags,
       roles: ["ADMIN", "EDITOR", "AUTHOR"],
     },
-    {
-      label: "Users & Roles",
-      href: "/admin/users",
-      icon: Users,
-      roles: ["ADMIN"],
-    },
+   
     {
       label: "Site & AdSense Settings",
       href: "/admin/settings",
@@ -91,11 +86,9 @@ export default function AdminNav({ user }: AdminNavProps) {
 
   return (
     <div className="bg-slate-900 text-slate-200 border-b border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-1.5">
-          <span className="text-xs font-bold uppercase tracking-wider bg-blue-700 text-white px-2.5 py-1 rounded mr-2">
-            Editorial CMS
-          </span>
+        
           {navItems
             .filter((item) => item.roles.includes(user.role))
             .map((item) => {

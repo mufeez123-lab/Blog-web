@@ -46,7 +46,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
               ) : (
                 <Link
                   href={item.href}
-                  className="hover:text-blue-700 hover:underline transition-colors"
+                  className="hover:text-[#da3036] hover:underline transition-colors"
                 >
                   {item.label}
                 </Link>

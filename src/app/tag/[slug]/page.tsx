@@ -19,7 +19,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const tag = await getTagBySlug(slug);
   if (!tag) {
-    return { title: "Tag Not Found | TechLedger" };
+    return { title: "Tag Not Found | FeezMedia" };
   }
   return buildTagMetadata(tag);
 }
@@ -47,7 +47,7 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
       />
 
       <header className="border-b-2 border-slate-900 pb-5">
-        <div className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-1">
+        <div className="text-xs font-bold uppercase tracking-widest text-[#da3036] mb-1">
           Topic Tag
         </div>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">

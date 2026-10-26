@@ -37,7 +37,7 @@ export function buildArticleMetadata(article: ArticleDTO): Metadata {
   ).slice(0, 200);
 
   return {
-    title: `${title} | TechLedger`,
+    title: `${title} | FeezMedia`,
     description,
     alternates: {
       canonical,
@@ -48,7 +48,7 @@ export function buildArticleMetadata(article: ArticleDTO): Metadata {
       title,
       description,
       url: canonical,
-      siteName: "TechLedger",
+      siteName: "FeezMedia",
       locale: "en_US",
       publishedTime: article.publishedAt || article.createdAt,
       modifiedTime: article.updatedAt,
@@ -78,15 +78,15 @@ export function buildCategoryMetadata(category: CategoryDTO): Metadata {
   const siteUrl = getSiteUrl();
   const canonical = `${siteUrl}/category/${category.slug}`;
   return {
-    title: `${category.name} — US News & Analysis | TechLedger`,
+    title: `${category.name} — US News & Analysis | FeezMedia`,
     description: category.description,
     alternates: { canonical },
     openGraph: {
       type: "website",
-      title: `${category.name} | TechLedger`,
+      title: `${category.name} | FeezMedia`,
       description: category.description,
       url: canonical,
-      siteName: "TechLedger",
+      siteName: "FeezMedia",
       locale: "en_US",
     },
   };
@@ -95,9 +95,9 @@ export function buildCategoryMetadata(category: CategoryDTO): Metadata {
 export function buildTagMetadata(tag: TagDTO): Metadata {
   const siteUrl = getSiteUrl();
   const canonical = `${siteUrl}/tag/${tag.slug}`;
-  const description = `Browse published articles, analysis, and tutorials tagged with ${tag.name} on TechLedger.`;
+  const description = `Browse published articles, analysis, and tutorials tagged with ${tag.name} on FeezMedia.`;
   return {
-    title: `${tag.name} Articles & Tutorials | TechLedger`,
+    title: `${tag.name} Articles & Tutorials | FeezMedia`,
     description,
     alternates: { canonical },
   };
@@ -134,7 +134,7 @@ export function buildArticleJsonLd(article: ArticleDTO) {
     },
     publisher: {
       "@type": "Organization",
-      name: "TechLedger",
+      name: "FeezMedia",
       url: siteUrl,
     },
     isAccessibleForFree: true,
@@ -149,7 +149,7 @@ export function buildOrganizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "NewsMediaOrganization",
-    name: "TechLedger",
+    name: "FeezMedia",
     url: siteUrl,
     description:
       "Independent digital publication covering US technology, artificial intelligence, business explainers, and software engineering.",
@@ -158,7 +158,7 @@ export function buildOrganizationJsonLd() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "editorial",
-      email: "editorial@techledger.us",
+      email: "mufizmalar@gmail.com",
       url: `${siteUrl}/contact`,
     },
   };

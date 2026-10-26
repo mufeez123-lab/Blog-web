@@ -63,7 +63,7 @@ const REQUIRED_ATTRIBUTES_SPEC = [
   {
     attribute: "title",
     constraint: "10–180 characters (Required)",
-    description: "Clear, authoritative US editorial headline without clickbait",
+    description: "Clear, authoritative  headline without clickbait",
   },
   {
     attribute: "slug",
@@ -271,7 +271,7 @@ const CATEGORY_PROFILES: Record<
     editorialFocus:
       "US software engineering interview preparation, system design roadmaps, staff+ technical leadership, architecture trade-off communication, and distributed team engineering practices.",
     contentStructure:
-      "Include: <h2>How US Engineering Hiring Committees Evaluate Candidates</h2>, <h2>Step-by-Step System Design & Trade-Off Framework</h2>, <h2>Common Architectural Blind Spots & How to Address Them</h2> (with <ul><li> points), a <blockquote> hiring rubric insight, and <h2>30-Day Preparation Roadmap</h2>.",
+      "Include: <h2>How Engineering Hiring Committees Evaluate Candidates</h2>, <h2>Step-by-Step System Design & Trade-Off Framework</h2>, <h2>Common Architectural Blind Spots & How to Address Them</h2> (with <ul><li> points), a <blockquote> hiring rubric insight, and <h2>30-Day Preparation Roadmap</h2>.",
     recommendedTags: ["System Design", "TypeScript", "Cloud Infrastructure"],
     defaultSourceName: "ACM Queue & US Engineering Leadership Guidelines",
     defaultSourceUrl: "https://queue.acm.org/",
@@ -758,7 +758,7 @@ function buildFallbackStructuredArticle(params: {
   const title = rawTitle.slice(0, 175);
   const slug = slugify(`${angle}-${dateStr}-${articleIndex}`);
   const excerpt =
-    `In-depth ${category.name.toLowerCase()} analysis examining ${angle.toLowerCase()}, architectural trade-offs, implementation standards, and measurable operational benchmarks for US engineering teams.`.slice(
+    `In-depth ${category.name.toLowerCase()} analysis examining ${angle.toLowerCase()}, architectural trade-offs, implementation standards, and measurable operational benchmarks for engineering teams.`.slice(
       0,
       390
     );
@@ -784,7 +784,7 @@ export function verifyServicePolicy(config: ServicePolicyConfig): boolean {
 
   const content = `
 <h2>Executive Overview</h2>
-<p>Engineering organizations across the United States are standardizing how they evaluate and deploy <strong>${angle}</strong> within their ${category.name} workflows. As distributed workloads scale across hybrid and multi-cloud environments, architectural clarity and verifiable telemetry have become mandatory requirements rather than optional enhancements.</p>
+<p>Engineering organizations across the  are standardizing how they evaluate and deploy <strong>${angle}</strong> within their ${category.name} workflows. As distributed workloads scale across hybrid and multi-cloud environments, architectural clarity and verifiable telemetry have become mandatory requirements rather than optional enhancements.</p>
 <p>${category.description} This briefing outlines the core engineering trade-offs, governance controls, and implementation patterns shaping current production deployments.</p>
 <h2>Key Architectural Pillars &amp; Operational Standards</h2>
 <ul>
@@ -811,12 +811,12 @@ ${codeSection}
       0,
       210
     ),
-    imageCaption: `Illustration: ${angle} (${category.name} Desk • TechLedger AI Studio)`,
+    imageCaption: `Illustration: ${angle} (${category.name} Desk • FeezMedia AI Studio)`,
     metaTitle: `${angle} | ${category.name} Briefing`.slice(0, 95),
     metaDescription: excerpt.slice(0, 195),
     sourceName:
       profile?.defaultSourceName ||
-      "TechLedger Editorial & Primary Technical Standards Reference",
+      "FeezMedia Editorial & Primary Technical Standards Reference",
     sourceUrl:
       profile?.defaultSourceUrl || "https://csrc.nist.gov/publications",
     tagNames: blueprint.recommendedTags,
@@ -864,7 +864,7 @@ export async function generateArticleWithAiStudio(params: {
         )}`
       : "";
 
-  const systemPrompt = `You are a senior US technology journalist and principal software engineer writing for TechLedger, an authoritative US digital publication.
+  const systemPrompt = `You are a senior US technology journalist and principal software engineer writing for FeezMedia, an authoritative US digital publication.
 Today's date is ${dateStr}.
 Generate an original, deeply informative, publication-ready article for the "${category.name}" category (slug: "${category.slug}").
 Category Description: ${category.description}
@@ -1065,7 +1065,7 @@ Requirements for ALL attributes:
   const cleanSourceName = (
     rawGenerated.sourceName ||
     profile?.defaultSourceName ||
-    "TechLedger Primary Technical Reference"
+    "FeezMedia Primary Technical Reference"
   )
     .trim()
     .slice(0, 120);
@@ -1278,7 +1278,7 @@ export async function generateDailyArticlesForCategories(options?: {
 
   // Resolve author (use passed authorId, or find ADMIN/EDITOR user in DB)
   let authorObjectId: mongoose.Types.ObjectId | null = null;
-  let authorName = options?.authorName || "TechLedger AI Editorial Desk";
+  let authorName = options?.authorName || "FeezMedia AI Editorial Desk";
 
   if (options?.authorId && mongoose.Types.ObjectId.isValid(options.authorId)) {
     authorObjectId = new mongoose.Types.ObjectId(options.authorId);

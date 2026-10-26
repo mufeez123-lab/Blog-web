@@ -139,7 +139,7 @@ export default async function AdminArticlesPage({
                       </div>
                     </td>
                     <td className="px-4 py-4 text-xs">
-                      <span className="font-bold text-blue-700">
+                      <span className="font-bold text-[#da3036]">
                         {article.type}
                       </span>{" "}
                       &bull; {article.category.name}
@@ -168,7 +168,7 @@ export default async function AdminArticlesPage({
                     <td className="px-5 py-4 text-right space-x-3 text-xs">
                       <Link
                         href={`/admin/articles/${article._id}/edit`}
-                        className="font-semibold text-blue-700 hover:underline"
+                        className="font-semibold text-[#da3036] hover:underline"
                       >
                         Edit / Workflow
                       </Link>

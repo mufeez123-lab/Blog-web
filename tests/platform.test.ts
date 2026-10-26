@@ -48,7 +48,7 @@ import sitemap from "@/app/sitemap";
 import robots from "@/app/robots";
 import { DEMO_ARTICLES } from "@/lib/demo-data";
 
-describe("TechLedger Comprehensive Platform Suite", () => {
+describe("FeezMedia Comprehensive Platform Suite", () => {
   beforeEach(() => {
     resetRateLimitsForTesting();
   });
@@ -61,7 +61,7 @@ describe("TechLedger Comprehensive Platform Suite", () => {
         excerpt:
           "A comprehensive technical guide to identity-based security and workload federation in modern cloud environments.",
         content:
-          "<p>This article body exceeds one hundred characters and provides detailed architectural guidance for engineering teams across the United States.</p>",
+          "<p>This article body exceeds one hundred characters and provides detailed architectural guidance for engineering teams across the .</p>",
         type: "NEWS",
         status: "DRAFT",
         coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
@@ -122,12 +122,12 @@ describe("TechLedger Comprehensive Platform Suite", () => {
     it("strips passwordHash when serializing User document to JSON", () => {
       const user = new User({
         name: "Alice Editor",
-        email: "ALICE@TECHLEDGER.US",
+        email: "ALICE@FeezMedia.US",
         passwordHash: "$2a$12$secretHashValueNotForPublic",
         role: "EDITOR",
       });
 
-      expect(user.email).toBe("alice@techledger.us");
+      expect(user.email).toBe("alice@FeezMedia.us");
       const json = user.toJSON();
       expect(json.passwordHash).toBeUndefined();
     });
@@ -146,7 +146,7 @@ describe("TechLedger Comprehensive Platform Suite", () => {
       const sessionUser = {
         id: "65f000111222333444555666",
         name: "Chief Editor",
-        email: "chief@techledger.us",
+        email: "chief@FeezMedia.us",
         role: "ADMIN" as const,
       };
 
@@ -257,7 +257,7 @@ describe("TechLedger Comprehensive Platform Suite", () => {
       expect(
         createUserSchema.safeParse({
           name: "Test Author",
-          email: "author@techledger.us",
+          email: "author@FeezMedia.us",
           password: "weakpassword", // missing uppercase & number
         }).success
       ).toBe(false);
@@ -352,7 +352,7 @@ describe("TechLedger Comprehensive Platform Suite", () => {
       const blogArticle = DEMO_ARTICLES[3];
 
       const meta = buildArticleMetadata(newsArticle);
-      expect(meta.title).toContain("TechLedger");
+      expect(meta.title).toContain("FeezMedia");
       expect(meta.description).toBe(newsArticle.metaDescription);
 
       const newsJsonLd = buildArticleJsonLd(newsArticle);
@@ -388,19 +388,19 @@ describe("TechLedger Comprehensive Platform Suite", () => {
 
       expect(
         websiteSettingsSchema.safeParse({
-          siteName: "TechLedger",
-          tagline: "US Technology & AI News",
-          logoText: "TechLedger",
+          siteName: "FeezMedia",
+          tagline: "Technology & AI News",
+          logoText: "FeezMedia",
           siteDescription:
-            "Independent US technology news and software engineering guides.",
-          defaultMetaTitle: "TechLedger | US Technology News",
+            "Independent technology news and software engineering guides.",
+          defaultMetaTitle: "FeezMedia | Technology News",
           defaultMetaDescription:
-            "Read in-depth reporting on US technology and software engineering.",
+            "Read in-depth reporting on technology and software engineering.",
           adsensePublisherId: "fake-invalid-id",
           adsEnabled: true,
           consentBannerEnabled: true,
-          contactEmail: "editorial@techledger.us",
-          footerText: "TechLedger independent publication.",
+          contactEmail: "mufizmalar@gmail.com",
+          footerText: "FeezMedia independent publication.",
           operatingDisclosure: "Operated from India for US readers.",
         }).success
       ).toBe(false);

@@ -237,7 +237,7 @@ export default function AiStudioGeneratorPanel({
         >
           <div className="flex items-center justify-between border-b border-slate-200 pb-3">
             <h2 className="font-serif text-lg font-bold text-slate-900 flex items-center gap-2">
-              <KeyRound className="w-5 h-5 text-blue-700" />
+              <KeyRound className="w-5 h-5 text-[#da3036]" />
               <span>Google AI Studio API Config</span>
             </h2>
             <span
@@ -309,7 +309,7 @@ export default function AiStudioGeneratorPanel({
                   onChange={(e) =>
                     setDailyAiGenerationEnabled(e.target.checked)
                   }
-                  className="rounded border-slate-300 text-blue-700"
+                  className="rounded border-slate-300 text-[#da3036]"
                 />
                 <span>Enable Daily Auto-Cron</span>
               </label>
@@ -332,7 +332,7 @@ export default function AiStudioGeneratorPanel({
           <div className="space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
               <h2 className="font-serif text-lg font-bold text-slate-900 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-blue-700" />
+                <Sparkles className="w-5 h-5 text-[#da3036]" />
                 <span>
                   Daily Article &amp; Cover Image Generator (3 Latest / Day)
                 </span>
@@ -413,7 +413,7 @@ export default function AiStudioGeneratorPanel({
                 type="checkbox"
                 checked={forceRegenerate}
                 onChange={(e) => setForceRegenerate(e.target.checked)}
-                className="rounded border-slate-300 text-blue-700"
+                className="rounded border-slate-300 text-[#da3036]"
               />
               <span>
                 Force generate {dailyArticlesPerCategory} fresh articles even if
@@ -496,7 +496,7 @@ export default function AiStudioGeneratorPanel({
                   </div>
                   <div className="space-y-1">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2 py-0.5 rounded">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#da3036] bg-blue-50 px-2 py-0.5 rounded">
                         {art.categoryName}
                       </span>
                       <span className="text-[11px] font-bold uppercase text-slate-600 bg-slate-100 px-2 py-0.5 rounded">
@@ -544,7 +544,7 @@ export default function AiStudioGeneratorPanel({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
             <h2 className="font-serif text-2xl font-bold text-slate-900 flex items-center gap-2">
-              <Layers className="w-6 h-6 text-blue-700" />
+              <Layers className="w-6 h-6 text-[#da3036]" />
               <span>
                 Active Admin Categories &amp; Daily 3-Article Progress (
                 {blueprints.length} Categories)
@@ -557,7 +557,7 @@ export default function AiStudioGeneratorPanel({
           </div>
           <Link
             href="/admin/categories"
-            className="text-xs font-semibold text-blue-700 hover:underline"
+            className="text-xs font-semibold text-[#da3036] hover:underline"
           >
             Manage Admin Categories &rarr;
           </Link>
@@ -588,7 +588,7 @@ export default function AiStudioGeneratorPanel({
                         <h3 className="font-serif text-lg font-bold text-slate-900">
                           {bp.categoryName}
                         </h3>
-                        <span className="px-2 py-0.5 text-[11px] font-bold uppercase rounded bg-blue-50 text-blue-700 border border-blue-200">
+                        <span className="px-2 py-0.5 text-[11px] font-bold uppercase rounded bg-blue-50 text-[#da3036] border border-blue-200">
                           Type: {bp.defaultArticleType}
                         </span>
                       </div>
@@ -662,7 +662,7 @@ export default function AiStudioGeneratorPanel({
                             <div className="flex items-center gap-2 shrink-0">
                               <Link
                                 href={`/admin/articles/${art._id}/edit`}
-                                className="text-blue-700 font-semibold hover:underline"
+                                className="text-[#da3036] font-semibold hover:underline"
                               >
                                 Edit
                               </Link>
@@ -717,7 +717,7 @@ export default function AiStudioGeneratorPanel({
         <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
           <div>
             <h2 className="font-serif text-lg font-bold text-slate-900 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-blue-700" />
+              <FileText className="w-5 h-5 text-[#da3036]" />
               <span>
                 All Required Article &amp; Image Attributes Populated per
                 Category
@@ -743,7 +743,7 @@ export default function AiStudioGeneratorPanel({
             <tbody className="divide-y divide-slate-200">
               {(blueprints[0]?.requiredAttributes || []).map((attr) => (
                 <tr key={attr.attribute} className="hover:bg-slate-50">
-                  <td className="px-5 py-3 font-mono font-bold text-blue-700">
+                  <td className="px-5 py-3 font-mono font-bold text-[#da3036]">
                     {attr.attribute}
                   </td>
                   <td className="px-4 py-3 font-medium text-slate-700">

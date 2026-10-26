@@ -6,15 +6,15 @@ import type {
 } from "@/types";
 
 export const DEFAULT_WEBSITE_SETTINGS: WebsiteSettingsDTO = {
-  siteName: "TechLedger",
-  tagline: "US Technology News, Artificial Intelligence & Engineering Briefings",
-  logoText: "TechLedger",
+  siteName: "FeezMedia",
+  tagline: "Technology News, Artificial Intelligence & Engineering Briefings",
+  logoText: "FeezMedia",
   siteDescription:
-    "Independent digital publication delivering US technology journalism, artificial intelligence analysis, business explainers, and practical software engineering guides.",
+    "Independent digital publication delivering technology journalism, artificial intelligence analysis, business explainers, and practical software engineering guides.",
   defaultMetaTitle:
-    "TechLedger | US Technology News, AI Analysis & Developer Guides",
+    "FeezMedia | Technology News, AI Analysis & Developer Guides",
   defaultMetaDescription:
-    "Read in-depth reporting on US technology, enterprise AI, business explainers, and full-stack software engineering tutorials.",
+    "Read in-depth reporting on technology, enterprise AI, business explainers, and full-stack software engineering tutorials.",
   socialLinks: {
     twitter: "https://x.com",
     linkedin: "https://linkedin.com",
@@ -24,11 +24,11 @@ export const DEFAULT_WEBSITE_SETTINGS: WebsiteSettingsDTO = {
   adsensePublisherId: process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID || "",
   adsEnabled: process.env.NEXT_PUBLIC_ENABLE_ADS === "true",
   consentBannerEnabled: true,
-  contactEmail: "editorial@techledger.us",
+  contactEmail: "mufizmalar@gmail.com",
   footerText:
-    "TechLedger is an independent digital publication covering US technology, artificial intelligence, business explainers, and software engineering.",
+    "FeezMedia is an independent digital publication covering US technology, artificial intelligence, business explainers, and software engineering.",
   operatingDisclosure:
-    "Published for readers in the United States and worldwide by an independent editorial and engineering team operating from India.",
+    "Published for readers in the  and worldwide by an independent editorial and engineering team operating from India.",
 };
 
 export const DEMO_CATEGORIES: CategoryDTO[] = [
@@ -94,9 +94,9 @@ export const DEMO_ARTICLES: ArticleDTO[] = [
     excerpt:
       "Demonstration Explainer: A technical overview of how US enterprise security teams implement short-lived credentials, workload identity federation, and continuous verification across multi-cloud environments.",
     content: `
-      <p><strong>Editorial Notice:</strong> <em>This article is clearly labeled demonstration content provided to illustrate TechLedger's layout, typography, and structured metadata before live database articles are published.</em></p>
+      <p><strong>Editorial Notice:</strong> <em>This article is clearly labeled demonstration content provided to illustrate FeezMedia's layout, typography, and structured metadata before live database articles are published.</em></p>
       <h2>Why Perimeter-Only Security No Longer Suffices</h2>
-      <p>Modern distributed engineering organizations across the United States rarely operate within a single static network perimeter. Microservices deployed across containerized clusters, serverless runtimes, and managed database platforms require identity-centric access controls at every network hop.</p>
+      <p>Modern distributed engineering organizations across the  rarely operate within a single static network perimeter. Microservices deployed across containerized clusters, serverless runtimes, and managed database platforms require identity-centric access controls at every network hop.</p>
       <p>Zero-trust architecture replaces implicit network trust with explicit cryptographic verification. Every service-to-service request must authenticate its workload identity and pass fine-grained policy checks before accessing downstream data stores.</p>
       <h2>Core Pillars of Workload Identity Federation</h2>
       <ul>
@@ -119,10 +119,10 @@ export const DEMO_ARTICLES: ArticleDTO[] = [
       "Illustration: Cloud infrastructure security relies on workload identity and least-privilege access controls.",
     author: {
       _id: "demo-author-1",
-      name: "TechLedger Editorial Desk",
+      name: "FeezMedia Editorial Desk",
       role: "EDITOR",
       title: "Infrastructure & Security Desk",
-      bio: "Demonstration editorial profile for TechLedger's US technology and security analysis desk.",
+      bio: "Demonstration editorial profile for FeezMedia's US technology and security analysis desk.",
     },
     category: DEMO_CATEGORIES[0],
     tags: [DEMO_TAGS[3], DEMO_TAGS[4]],
@@ -148,7 +148,7 @@ export const DEMO_ARTICLES: ArticleDTO[] = [
     excerpt:
       "Demonstration Analysis: How software teams ground large language models using chunking strategies, hybrid lexical-vector search, and strict citation verification.",
     content: `
-      <p><strong>Editorial Notice:</strong> <em>This article is demonstration content illustrating TechLedger's Artificial Intelligence coverage format.</em></p>
+      <p><strong>Editorial Notice:</strong> <em>This article is demonstration content illustrating FeezMedia's Artificial Intelligence coverage format.</em></p>
       <h2>Moving Beyond Unverified Prompting</h2>
       <p>When software teams deploy AI assistants for internal documentation or customer support, ungrounded generation poses a significant reliability risk. Retrieval-Augmented Generation (RAG) mitigates hallucinations by restricting responses to verified passages retrieved from an authoritative knowledge base.</p>
       <h2>Three Architectural Decisions That Determine Accuracy</h2>
@@ -168,10 +168,10 @@ export const DEMO_ARTICLES: ArticleDTO[] = [
       "Illustration: Grounding AI assistants requires hybrid retrieval and verifiable source citations.",
     author: {
       _id: "demo-author-1",
-      name: "TechLedger Editorial Desk",
+      name: "FeezMedia Editorial Desk",
       role: "EDITOR",
       title: "Applied AI & Systems Desk",
-      bio: "Demonstration editorial profile for TechLedger's US technology and AI analysis desk.",
+      bio: "Demonstration editorial profile for FeezMedia's US technology and AI analysis desk.",
     },
     category: DEMO_CATEGORIES[1],
     tags: [DEMO_TAGS[5], DEMO_TAGS[2]],
@@ -216,10 +216,10 @@ export const DEMO_ARTICLES: ArticleDTO[] = [
       "Illustration: Aligning software architecture with cloud unit economics.",
     author: {
       _id: "demo-author-1",
-      name: "TechLedger Editorial Desk",
+      name: "FeezMedia Editorial Desk",
       role: "EDITOR",
       title: "Business & Cloud Economics Desk",
-      bio: "Demonstration editorial profile for TechLedger.",
+      bio: "Demonstration editorial profile for FeezMedia.",
     },
     category: DEMO_CATEGORIES[2],
     tags: [DEMO_TAGS[6], DEMO_TAGS[3]],
@@ -271,10 +271,10 @@ ArticleSchema.index({ status: 1, type: 1, publishedAt: -1 });</code></pre>
       "Illustration: Optimizing MongoDB queries and connection pooling in Next.js.",
     author: {
       _id: "demo-author-1",
-      name: "TechLedger Editorial Desk",
+      name: "FeezMedia Editorial Desk",
       role: "EDITOR",
       title: "Full-Stack Engineering Desk",
-      bio: "Demonstration editorial profile for TechLedger's software engineering tutorials.",
+      bio: "Demonstration editorial profile for FeezMedia's software engineering tutorials.",
     },
     category: DEMO_CATEGORIES[3],
     tags: [DEMO_TAGS[0], DEMO_TAGS[1], DEMO_TAGS[2]],
@@ -320,10 +320,10 @@ ArticleSchema.index({ status: 1, type: 1, publishedAt: -1 });</code></pre>
       "Illustration: Structuring system design discussions around concrete read/write trade-offs.",
     author: {
       _id: "demo-author-1",
-      name: "TechLedger Editorial Desk",
+      name: "FeezMedia Editorial Desk",
       role: "EDITOR",
       title: "Engineering Careers Desk",
-      bio: "Demonstration editorial profile for TechLedger's career and interview guides.",
+      bio: "Demonstration editorial profile for FeezMedia's career and interview guides.",
     },
     category: DEMO_CATEGORIES[4],
     tags: [DEMO_TAGS[7], DEMO_TAGS[1]],

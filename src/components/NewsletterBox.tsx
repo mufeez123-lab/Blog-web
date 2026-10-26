@@ -21,7 +21,7 @@ const CATEGORY_OPTIONS = [
   { slug: "career", label: "Careers" },
 ];
 
-const STORAGE_KEY = "techledger_subscriber_email";
+const STORAGE_KEY = "FeezMedia_subscriber_email";
 
 export default function NewsletterBox() {
   const [email, setEmail] = useState("");
@@ -132,7 +132,7 @@ export default function NewsletterBox() {
         );
       } else {
         setStatusMessage(
-          `Subscribed! We sent the Welcome & Latest Circuit Briefing (${data.articlesIncludedCount || 5} articles) to ${data.email}${
+          `Subscribed! (${data.articlesIncludedCount || 5} articles) to ${data.email}${
             data.syncedToGoogleForms ? " and recorded your response in Google Forms." : "."
           }`
         );
@@ -167,7 +167,7 @@ export default function NewsletterBox() {
         setAlreadySubscribed(false);
         setEmailSent(false);
         setEmailPreviewUrl(null);
-        setStatusMessage("You have unsubscribed from The Weekly Circuit Briefing.");
+        setStatusMessage("You have unsubscribed from The Daily Circuit Briefing.");
         setEmail("");
       }
     } catch {
@@ -193,7 +193,7 @@ export default function NewsletterBox() {
           <div className="flex flex-wrap items-center gap-2.5">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-400">
               <Mail className="w-4 h-4" />
-              <span>The Weekly Circuit Briefing</span>
+              <span>The Daily Circuit Briefing</span>
             </div>
             {subscribedEmail && (
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase bg-emerald-950/90 text-emerald-300 border border-emerald-700">
@@ -207,7 +207,7 @@ export default function NewsletterBox() {
             id="newsletter-heading"
             className="font-serif text-xl sm:text-2xl font-bold text-white"
           >
-            US Tech, Enterprise AI &amp; Architecture in Your Inbox
+            Tech, Enterprise AI &amp; Architecture in Your Inbox
           </h2>
           <p className="text-sm text-slate-300 leading-relaxed">
             Subscribe to receive our latest daily AI &amp; technology reporting,
@@ -215,31 +215,7 @@ export default function NewsletterBox() {
             delivered directly to your email ID and synced with Google Forms.
           </p>
 
-          {/* Dynamic Category Topic Filter Pills */}
-          <div className="pt-1">
-            <span className="block text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5">
-              Select Briefing Topics:
-            </span>
-            <div className="flex flex-wrap gap-1.5">
-              {CATEGORY_OPTIONS.map((opt) => {
-                const active = selectedCategories.includes(opt.slug);
-                return (
-                  <button
-                    key={opt.slug}
-                    type="button"
-                    onClick={() => toggleCategory(opt.slug)}
-                    className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
-                      active
-                        ? "bg-blue-600 text-white"
-                        : "bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700"
-                    }`}
-                  >
-                    {opt.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+       
         </div>
 
         <div className="w-full lg:w-auto shrink-0 space-y-3">
@@ -255,15 +231,10 @@ export default function NewsletterBox() {
                   {alreadySubscribed && (
                     <div className="text-xs text-slate-300 font-normal">
                       Status verified: Your email ID is subscribed and receives
-                      the latest TechLedger articles.
+                      the latest FeezMedia articles.
                     </div>
                   )}
-                  {syncedToGoogleForms && (
-                    <div className="text-xs text-blue-300 font-normal flex items-center gap-1">
-                      <FileSpreadsheet className="w-3.5 h-3.5" />
-                      <span>Synced with Google Forms</span>
-                    </div>
-                  )}
+              
                 </div>
               </div>
 
@@ -294,7 +265,7 @@ export default function NewsletterBox() {
                   </a>
                 )}
 
-                <button
+                {/* <button
                   type="button"
                   disabled={loading}
                   onClick={handleUnsubscribe}
@@ -302,7 +273,7 @@ export default function NewsletterBox() {
                 >
                   <XCircle className="w-3.5 h-3.5" />
                   <span>Unsubscribe</span>
-                </button>
+                </button> */}
               </div>
             </div>
           ) : (
@@ -367,22 +338,14 @@ export default function NewsletterBox() {
                   onClick={() => setShowGoogleFormEmbed((prev) => !prev)}
                   className="inline-flex items-center gap-1.5 text-blue-400 hover:text-blue-300 font-medium underline"
                 >
-                  <FileSpreadsheet className="w-3.5 h-3.5" />
+                  {/* <FileSpreadsheet className="w-3.5 h-3.5" />
                   <span>
                     {showGoogleFormEmbed
                       ? "Hide Embedded Google Form"
                       : "Fill Subscription via Google Forms"}
-                  </span>
+                  </span> */}
                 </button>
-                <a
-                  href={googleFormUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-slate-400 hover:text-white"
-                >
-                  <span>Open Google Form in New Tab</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+               
               </>
             ) : (
               <span className="inline-flex items-center gap-1.5 text-[11px] text-slate-400">
@@ -402,7 +365,7 @@ export default function NewsletterBox() {
           <div className="bg-white rounded-lg overflow-hidden border border-slate-700">
             <iframe
               src={embedUrl}
-              title="TechLedger Newsletter Google Form"
+              title="FeezMedia Newsletter Google Form"
               className="w-full h-[520px] border-0"
             >
               Loading Google Form…

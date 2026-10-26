@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function NotFoundPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-20 text-center space-y-6">
-      <div className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 rounded">
+      <div className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#da3036] bg-blue-50 rounded">
         Error 404
       </div>
       <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">

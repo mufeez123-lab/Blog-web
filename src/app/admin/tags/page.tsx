@@ -50,7 +50,7 @@ export default function AdminTagsPage() {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       <div>
         <h1 className="font-serif text-3xl font-bold text-slate-900 flex items-center gap-2">
-          <Tags className="w-6 h-6 text-blue-700" />
+          <Tags className="w-6 h-6 text-[#da3036]" />
           Topic Tag Management
         </h1>
         <p className="text-sm text-slate-600 mt-1">

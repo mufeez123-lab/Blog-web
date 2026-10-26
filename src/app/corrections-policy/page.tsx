@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Corrections Policy",
   description:
-    "How TechLedger investigates reader correction requests, updates published articles, and documents substantive changes.",
+    "How FeezMedia investigates reader correction requests, updates published articles, and documents substantive changes.",
 };
 
 export default function CorrectionsPolicyPage() {
@@ -20,7 +20,7 @@ export default function CorrectionsPolicyPage() {
 
       <div className="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 space-y-8">
         <header className="border-b border-slate-200 pb-6">
-          <div className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#da3036] mb-2">
             Accountability
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
@@ -39,7 +39,7 @@ export default function CorrectionsPolicyPage() {
             outdated technical claim are encouraged to notify our editorial team
             via our <Link href="/contact">Contact Form</Link> (select{" "}
             <em>Editorial Tip / News Correction</em>) or email{" "}
-            <a href="mailto:editorial@techledger.us">editorial@techledger.us</a>{" "}
+            <a href="mailto:mufizmalar@gmail.com">mufizmalar@gmail.com</a>{" "}
             with the article URL and supporting documentation.
           </p>
 

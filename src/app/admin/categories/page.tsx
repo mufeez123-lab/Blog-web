@@ -52,7 +52,7 @@ export default function AdminCategoriesPage() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       <div>
         <h1 className="font-serif text-3xl font-bold text-slate-900 flex items-center gap-2">
-          <FolderTree className="w-6 h-6 text-blue-700" />
+          <FolderTree className="w-6 h-6 text-[#da3036]" />
           Category Management
         </h1>
         <p className="text-sm text-slate-600 mt-1">
@@ -133,7 +133,7 @@ export default function AdminCategoriesPage() {
               <div key={cat._id} className="p-5 space-y-1">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-slate-900">{cat.name}</span>
-                  <code className="text-xs bg-slate-100 px-2 py-0.5 rounded text-blue-700">
+                  <code className="text-xs bg-slate-100 px-2 py-0.5 rounded text-[#da3036]">
                     /category/{cat.slug}
                   </code>
                 </div>

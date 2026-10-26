@@ -1,6 +1,6 @@
 # TechLedger — US-Focused Digital News Portal, AI Publication & Engineering Blog
 
-**TechLedger** is a full-stack, production-oriented digital news portal and technology blog targeting readers in the United States, engineered to operate on a **$0 initial budget** from India while preparing for organic Google Search growth and a future **Google AdSense** application.
+**TechLedger** is a full-stack, production-oriented digital news portal and technology blog targeting readers in the , engineered to operate on a **$0 initial budget** from India while preparing for organic Google Search growth and a future **Google AdSense** application.
 
 ---
 

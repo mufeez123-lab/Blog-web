@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Privacy & Cookie Policy",
   description:
-    "TechLedger's Privacy Policy detailing data collection, cookies, Google AdSense advertising disclosures, and US state privacy rights.",
+    "FeezMedia's Privacy Policy detailing data collection, cookies, Google AdSense advertising disclosures, and US state privacy rights.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
 
       <div className="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 space-y-8">
         <header className="border-b border-slate-200 pb-6">
-          <div className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#da3036] mb-2">
             Privacy &amp; Data Governance
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
         <div className="prose-editorial max-w-none">
           <p>
             <em>
-              Important Notice: This Privacy Policy discloses how TechLedger
+              Important Notice: This Privacy Policy discloses how FeezMedia
               collects, uses, and safeguards information. While structured to
               align with Google Publisher Policies and US privacy principles,
               site owners should review their specific data practices with
@@ -59,14 +59,14 @@ export default function PrivacyPolicyPage() {
               <strong>Administrative Session Cookies:</strong> Authorized
               editorial staff who sign in to <code>/admin</code> receive a
               cryptographically signed, HTTP-only session cookie (
-              <code>techledger_session</code>). Regular readers do not receive
+              <code>FeezMedia_session</code>). Regular readers do not receive
               authentication cookies.
             </li>
           </ul>
 
           <h2>2. Google AdSense &amp; Third-Party Advertising Cookies</h2>
           <p>
-            When display advertising is enabled on TechLedger, we may partner
+            When display advertising is enabled on FeezMedia, we may partner
             with <strong>Google AdSense</strong> and third-party advertising
             vendors to serve ads when you visit our website:
           </p>
@@ -78,11 +78,11 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               Google&apos;s use of advertising cookies enables it and its
-              partners to serve ads to users based on their visit to TechLedger
+              partners to serve ads to users based on their visit to FeezMedia
               and/or other sites on the Internet.
             </li>
             <li>
-              Users in the United States and worldwide may opt out of
+              Users in the  and worldwide may opt out of
               personalized advertising by visiting{" "}
               <a
                 href="https://adssettings.google.com"
@@ -105,7 +105,7 @@ export default function PrivacyPolicyPage() {
 
           <h2>3. Analytics</h2>
           <p>
-            When configured, TechLedger uses Google Analytics 4 with IP
+            When configured, FeezMedia uses Google Analytics 4 with IP
             anonymization enabled to understand aggregate readership trends,
             popular article categories, and Core Web Vitals performance.
           </p>
@@ -133,10 +133,10 @@ export default function PrivacyPolicyPage() {
 
           <h2>5. International Operations Disclosure</h2>
           <p>
-            TechLedger is published for a United States audience by an
+            FeezMedia is published for a  audience by an
             independent editorial and engineering team operating from India,
             using cloud database and hosting infrastructure located in the
-            United States.
+            .
           </p>
         </div>
       </div>

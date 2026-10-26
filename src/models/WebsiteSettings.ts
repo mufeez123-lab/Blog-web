@@ -50,39 +50,39 @@ const WebsiteSettingsSchema = new Schema<IWebsiteSettings>(
     siteName: {
       type: String,
       required: true,
-      default: "TechLedger",
+      default: "FeezMedia",
       trim: true,
       maxlength: 80,
     },
     tagline: {
       type: String,
-      default: "US Technology News, Artificial Intelligence & Engineering Briefings",
+      default: "Technology News, Artificial Intelligence & Engineering Briefings",
       trim: true,
       maxlength: 160,
     },
     logoText: {
       type: String,
-      default: "TechLedger",
+      default: "FeezMedia",
       trim: true,
       maxlength: 40,
     },
     siteDescription: {
       type: String,
       default:
-        "Independent digital publication delivering US technology journalism, artificial intelligence analysis, business explainers, and practical software engineering guides.",
+        "Independent digital publication delivering technology journalism, artificial intelligence analysis, business explainers, and practical software engineering guides.",
       trim: true,
       maxlength: 360,
     },
     defaultMetaTitle: {
       type: String,
-      default: "TechLedger | US Technology News, AI Analysis & Developer Guides",
+      default: "FeezMedia | Technology News, AI Analysis & Developer Guides",
       trim: true,
       maxlength: 100,
     },
     defaultMetaDescription: {
       type: String,
       default:
-        "Read in-depth reporting on US technology, enterprise AI, business explainers, and full-stack software engineering tutorials.",
+        "Read in-depth reporting on technology, enterprise AI, business explainers, and full-stack software engineering tutorials.",
       trim: true,
       maxlength: 200,
     },
@@ -108,19 +108,19 @@ const WebsiteSettingsSchema = new Schema<IWebsiteSettings>(
     contactEmail: {
       type: String,
       trim: true,
-      default: "editorial@techledger.us",
+      default: "mufizmalar@gmail.com",
     },
     footerText: {
       type: String,
       trim: true,
       default:
-        "TechLedger is an independent digital publication covering US technology, artificial intelligence, business explainers, and software engineering.",
+        "FeezMedia is an independent digital publication covering US technology, artificial intelligence, business explainers, and software engineering.",
     },
     operatingDisclosure: {
       type: String,
       trim: true,
       default:
-        "Published for readers in the United States and worldwide by an independent editorial and engineering team operating from India.",
+        "Published for readers in the  and worldwide by an independent editorial and engineering team operating from India.",
     },
     googleAiStudioApiKey: {
       type: String,

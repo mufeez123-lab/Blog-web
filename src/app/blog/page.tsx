@@ -28,11 +28,11 @@ export default async function BlogIndexPage({
 
       <header className="border-b-2 border-slate-900 pb-5 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-1">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#da3036] mb-1">
             Engineering &amp; Careers
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
-            TechLedger Engineering Blog &amp; Guides
+            FeezMedia Engineering Blog &amp; Guides
           </h1>
           <p className="text-base text-slate-600 mt-2 max-w-3xl">
             Hands-on tutorials covering Next.js, React, Node.js, MongoDB schema
@@ -44,13 +44,13 @@ export default async function BlogIndexPage({
         <div className="flex items-center gap-2 shrink-0">
           <Link
             href="/blog/programming"
-            className="px-3.5 py-2 text-xs font-semibold bg-white border border-slate-300 rounded-md hover:border-blue-700 hover:text-blue-700"
+            className="px-3.5 py-2 text-xs font-semibold bg-white border border-slate-300 rounded-md hover:border-blue-700 hover:text-[#da3036]"
           >
             Programming Tutorials
           </Link>
           <Link
             href="/blog/career"
-            className="px-3.5 py-2 text-xs font-semibold bg-white border border-slate-300 rounded-md hover:border-blue-700 hover:text-blue-700"
+            className="px-3.5 py-2 text-xs font-semibold bg-white border border-slate-300 rounded-md hover:border-blue-700 hover:text-[#da3036]"
           >
             Career Guides
           </Link>

@@ -47,7 +47,7 @@ export default function AdminLoginPage() {
             <Lock className="w-5 h-5 text-blue-400" />
           </div>
           <h1 className="font-serif text-2xl font-bold text-slate-900">
-            TechLedger Editorial Login
+            FeezMedia Editorial Login
           </h1>
           <p className="text-xs text-slate-500">
             Authorized access for Administrators, Editors, and Staff Authors.
@@ -76,7 +76,7 @@ export default function AdminLoginPage() {
               autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="editor@techledger.us"
+              placeholder="editor@FeezMedia.us"
               className="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700"
             />
           </div>
@@ -111,17 +111,9 @@ export default function AdminLoginPage() {
         </form>
 
         <div className="pt-4 border-t border-slate-100 text-xs text-slate-500 space-y-2">
-          <p className="font-semibold text-slate-700">First-Time Setup Note:</p>
-          <p>
-            No administrator password is ever hardcoded in source code. To
-            create your initial administrator account, configure{" "}
-            <code className="font-mono">MONGODB_URI</code> and{" "}
-            <code className="font-mono">INITIAL_ADMIN_*</code> in{" "}
-            <code className="font-mono">.env.local</code> and run{" "}
-            <code className="font-mono">npm run create-admin</code>.
-          </p>
+       
           <div className="pt-1">
-            <Link href="/" className="text-blue-700 hover:underline font-medium">
+            <Link href="/" className="text-[#da3036] hover:underline font-medium">
               &larr; Return to Public Homepage
             </Link>
           </div>

@@ -43,14 +43,14 @@ export function mapArticleDocToDTO(doc: any): ArticleDTO {
     author: doc.author
       ? {
           _id: String(doc.author._id || doc.author),
-          name: doc.author.name || "TechLedger Staff",
+          name: doc.author.name || "FeezMedia Staff",
           role: doc.author.role || "AUTHOR",
           title: doc.author.title || "Staff Writer",
           bio: doc.author.bio || "",
         }
       : {
           _id: "staff",
-          name: "TechLedger Staff",
+          name: "FeezMedia Staff",
           role: "AUTHOR",
           title: "Staff Writer",
           bio: "",
@@ -340,7 +340,7 @@ export async function getPublishedArticles(params?: {
 }
 
 /**
- * Fetches structured sections for the TechLedger homepage.
+ * Fetches structured sections for the FeezMedia homepage.
  */
 export async function getHomepageData() {
   const allPublished = await getPublishedArticles({ page: 1, pageSize: 24 });

@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Latest Technology, AI & Business News",
   description:
-    "Read the latest technology reporting, artificial intelligence developments, cybersecurity briefings, and business explainers on TechLedger.",
+    "Read the latest technology reporting, artificial intelligence developments, cybersecurity briefings, and business explainers on FeezMedia.",
 };
 
 export default async function NewsIndexPage({
@@ -30,9 +30,7 @@ export default async function NewsIndexPage({
       <Breadcrumbs items={[{ label: "Latest News", href: "/news" }]} />
 
       <header className="border-b-2 border-slate-900 pb-5">
-        <div className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-1">
-          US News Desk
-        </div>
+        
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
           Latest Technology, AI &amp; Business News
         </h1>

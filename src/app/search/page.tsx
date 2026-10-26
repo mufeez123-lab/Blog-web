@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Search Articles & Tutorials",
   description:
-    "Search TechLedger's archive of US technology news, artificial intelligence analysis, business explainers, and programming tutorials.",
+    "Search FeezMedia's archive of US technology news, artificial intelligence analysis, business explainers, and programming tutorials.",
   robots: { index: true, follow: true },
 };
 
@@ -44,7 +44,7 @@ export default async function SearchPage({
 
       <header className="space-y-2">
         <h1 className="font-serif text-3xl font-bold text-slate-900">
-          Search TechLedger
+          Search FeezMedia
         </h1>
         <p className="text-sm text-slate-600">
           Filter published news reports, AI analysis, business explainers, and

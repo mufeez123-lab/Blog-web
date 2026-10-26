@@ -34,7 +34,7 @@ export default async function HomePage() {
           className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm text-slate-800"
         >
           <div className="flex items-start gap-2.5">
-            <Info className="w-5 h-5 text-blue-700 shrink-0 mt-0.5" />
+            <Info className="w-5 h-5 text-[#da3036] shrink-0 mt-0.5" />
             <div>
               <strong className="font-semibold text-slate-900">
                 Demonstration Content Active:
@@ -44,7 +44,7 @@ export default async function HomePage() {
               and publish articles via the{" "}
               <Link
                 href="/admin"
-                className="text-blue-700 underline font-medium"
+                className="text-[#da3036] underline font-medium"
               >
                 Admin Editorial Desk
               </Link>{" "}
@@ -65,7 +65,7 @@ export default async function HomePage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-8">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-bold uppercase tracking-widest text-blue-700 flex items-center gap-1.5">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#da3036] flex items-center gap-1.5">
                 <Newspaper className="w-4 h-4" />
                 Lead Editorial Story
               </span>
@@ -87,8 +87,8 @@ export default async function HomePage() {
               <div>
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-900">
                   <h2 className="font-serif text-lg font-bold text-slate-900 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-blue-700" />
-                    Editor&apos;s Selections
+                    <Sparkles className="w-4 h-4 text-[#da3036]" />
+                    Trending News
                   </h2>
                   <span className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">
                     Curated
@@ -106,7 +106,7 @@ export default async function HomePage() {
               </div>
 
               <div className="pt-4 mt-4 border-t border-slate-100 text-xs text-slate-500">
-                Selected by TechLedger editors for architectural depth and
+                Selected by FeezMedia editors for architectural depth and
                 practical clarity for US readers.
               </div>
             </div>
@@ -128,11 +128,11 @@ export default async function HomePage() {
             id="latest-news-heading"
             className="font-serif text-2xl font-bold text-slate-900"
           >
-            Latest US Technology &amp; Industry News
+            Latest Technology &amp; Industry News
           </h2>
           <Link
             href="/news"
-            className="text-sm font-semibold text-blue-700 hover:text-blue-900 inline-flex items-center gap-1"
+            className="text-sm font-semibold text-[#da3036] hover:text-blue-900 inline-flex items-center gap-1"
           >
             <span>View All News</span>
             <ArrowRight className="w-4 h-4" />
@@ -163,7 +163,7 @@ export default async function HomePage() {
             </h2>
             <Link
               href="/news/technology"
-              className="text-xs font-semibold uppercase tracking-wider text-blue-700 hover:underline"
+              className="text-xs font-semibold uppercase tracking-wider text-[#da3036] hover:underline"
             >
               More Tech &rarr;
             </Link>
@@ -189,7 +189,7 @@ export default async function HomePage() {
             </h2>
             <Link
               href="/news/ai"
-              className="text-xs font-semibold uppercase tracking-wider text-blue-700 hover:underline"
+              className="text-xs font-semibold uppercase tracking-wider text-[#da3036] hover:underline"
             >
               More AI &rarr;
             </Link>
@@ -215,7 +215,7 @@ export default async function HomePage() {
             </h2>
             <Link
               href="/news/business"
-              className="text-xs font-semibold uppercase tracking-wider text-blue-700 hover:underline"
+              className="text-xs font-semibold uppercase tracking-wider text-[#da3036] hover:underline"
             >
               More Business &rarr;
             </Link>
@@ -242,17 +242,17 @@ export default async function HomePage() {
               id="blog-tutorials-heading"
               className="font-serif text-2xl font-bold text-slate-900 flex items-center gap-2"
             >
-              <BookOpen className="w-5 h-5 text-blue-700" />
+              <BookOpen className="w-5 h-5 text-[#da3036]" />
               Engineering Tutorials &amp; Career Guides
             </h2>
             <p className="text-xs text-slate-600 mt-0.5">
-              Practical Next.js, TypeScript, MongoDB architecture guides and US
+              Practical Next.js, TypeScript, MongoDB architecture guides and
               engineering interview roadmaps
             </p>
           </div>
           <Link
             href="/blog"
-            className="text-sm font-semibold text-blue-700 hover:text-blue-900 inline-flex items-center gap-1"
+            className="text-sm font-semibold text-[#da3036] hover:text-blue-900 inline-flex items-center gap-1"
           >
             <span>Explore Tech Blog</span>
             <ArrowRight className="w-4 h-4" />

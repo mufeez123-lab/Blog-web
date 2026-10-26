@@ -37,16 +37,16 @@ export async function GET(request: Request) {
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Unsubscribed | TechLedger</title>
+  <title>Unsubscribed | FeezMedia</title>
 </head>
 <body style="font-family: system-ui, sans-serif; background: #f8fafc; color: #0f172a; padding: 48px 16px; text-align: center;">
   <div style="max-width: 460px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 32px;">
     <h1 style="font-family: Georgia, serif; font-size: 22px; margin-top: 0;">You have been unsubscribed</h1>
     <p style="font-size: 14px; color: #475569; line-height: 1.6;">
-      <strong>${emailParam}</strong> will no longer receive The Weekly Circuit Briefing.
+      <strong>${emailParam}</strong> will no longer receive The Daily Circuit Briefing.
     </p>
     <a href="/" style="display: inline-block; margin-top: 12px; padding: 10px 18px; background: #1d4ed8; color: #fff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 600;">
-      Return to TechLedger
+      Return to FeezMedia
     </a>
   </div>
 </body>
